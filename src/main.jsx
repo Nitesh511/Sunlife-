@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import Navbar from './Components/Header/Navbar.jsx'
+import Index from './Components/Header/views/layout/index.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Navbar/>
+    <Index/>
   </React.StrictMode>,
 )
