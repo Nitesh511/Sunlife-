@@ -1,8 +1,10 @@
 import React from 'react';
 import advisoryImage from '../../../../../assets/Advisory.png';
+import NoticeItem from "./noticecard.jsx"
 
 const AdvisoryService = () => {
   return (
+    <div className=''>
     <div className="bg-white min-h-screen flex items-center justify-center">
       <div className="max-w-8xl mx-auto px-4 py-8 md:flex md:items-center md:space-x-8">
         {/* Left Side (Text Content) */}
@@ -36,6 +38,8 @@ const AdvisoryService = () => {
           />
         </div>
       </div>
+    </div>
+    <NoticeItem/>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import React from 'react';
 const Topnav = () => {
   return (
     <div>
-      <nav className="bg-white w-full px-4 py-2 flex justify-between items-center fixed top-0 z-10">
+      <nav className="bg-white w-full px-4 py-2 flex justify-between items-center fixed top-0 z-20">
         <div className="flex items-center space-x-4 md:space-x-10 ">
           <button className="bg-orange-500 text-white font-bold py-1 px-3 md:px-5 rounded-sm text-base md:text-xl">
             Highlights
