@@ -5,7 +5,7 @@ import MoreInfoForm from "./contact_merchant";
 
 const Issue_management = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {/* Main content */}
       <div className="relative h-96 bg-gray-300 overflow-hidden">
         {/* Background image */}
@@ -21,16 +21,20 @@ const Issue_management = () => {
         <div className="absolute inset-0 bg-black bg-opacity-30"></div>
 
         {/* Content */}
-        <div className="relative h-full flex flex-col justify-between p-32 text-white">
+        <div className="relative h-full flex flex-col justify-between p-8 md:p-32 text-white">
           {/* Title */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="max-w-7xl mx-auto"></div>
           <h1 className="text-4xl font-bold">Issue Management</h1>
         </div>
       </div>
 
       {/* Text content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="text-4xl font-bold mb-4">Issue Management</h1>
+      <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                <span className="text-blue-600 border-b-4 border-blue-900">
+                  Issue Management Service
+                </span>
+              </h1>
         <p className="text-lg">
           Sunlife Capital, born from the merger of Laxmi Capital and Sunrise
           Capital, stands as a beacon in the realm of issue management. Our
@@ -50,7 +54,7 @@ const Issue_management = () => {
       <CompanyTable />
 
       {/* More Info Form */}
-      <div className="lg:relative lg:mt-56">
+      <div className="relative mt-10 lg:mt-56">
         <MoreInfoForm/>
       </div>
     </div>

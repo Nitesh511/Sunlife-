@@ -1,5 +1,6 @@
 import React from "react";
 import Company from "../../../../../assets/company.jpg";
+import Registrar_table from "./registrar_table";
 
 const Registrar = () => {
   return (
@@ -25,7 +26,11 @@ const Registrar = () => {
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="text-4xl font-bold mb-4">Registrar To Shares</h1>
+      <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                <span className="text-blue-600 border-b-4 border-blue-900">
+                 Registrar Service
+                </span>
+              </h1>
         <p className="text-lg">
           Sunlife Capital excels in both pre-issue and post-issue management of
           shares. Alongside these core services, the company fulfills the
@@ -39,6 +44,7 @@ const Registrar = () => {
           Share services:
         </p>
       </div>
+      <Registrar_table/>
       
     </div>
   );

@@ -53,6 +53,7 @@ const CompanyTable = () => {
           ))}
         </tbody>
       </table>
+      
     </div>
   );
 };
