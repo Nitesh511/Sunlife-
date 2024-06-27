@@ -20,6 +20,8 @@ import Depository_part from "./depository_participations/depository_part";
 import Specalized_investment from "./specalized_investment/specalized_investment";
 import Corporate_advisory from "./corporate_advisory/corporate_advisory";
 import OurServices from "./services/services";
+import Download_part from "./downloads/download_part";
+
 
 function Index (){
   return (
@@ -43,6 +45,8 @@ function Index (){
     <Route path="/services/specalized_investment" element={<Specalized_investment/>}></Route>
     <Route path="/services/cooperate_advisory" element={<Corporate_advisory/>}></Route>
     <Route path="/services/our_services" element={<OurServices/>}></Route>
+    <Route path="/downloads" element={<Download_part/>}></Route>
+
 
 
 

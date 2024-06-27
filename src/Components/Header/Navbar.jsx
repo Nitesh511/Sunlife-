@@ -233,12 +233,10 @@ const Navbar = () => {
                   </button>
                   {dropdownOpen === "information" && (
                     <div className="absolute bg-white mt-0 rounded-md shadow-lg w-60">
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
+                      <Link className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white" to={"/downloads"}
                       >
                         Downloads
-                      </a>
+                      </Link>
                       <a
                         href="#"
                         className="block px-4 py-2 text-black   hover:bg-orange-600 hover:text-white"
