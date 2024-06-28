@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    touch-action: manipulation; /* Disable default touch gestures like pan and zoom */
+    user-select: none; /* Disable text selection */
+  }
+  
+  /* Ensuring elements cover full width */
+  html, body {
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  

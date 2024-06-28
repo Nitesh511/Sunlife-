@@ -48,7 +48,7 @@ const Merchant = () => {
           </div>
 
           {/* Right Side (Services List) */}
-          <div className="md:w-1/2 mb-4 md:mb-0 mt-24 ">
+          <div className="md:w-1/2 mb-4 md:mb-0 lg:mt-24 ">
             <h2 className="text-3xl font-bold text-gray-800 mb-6">
               Merchant Banking Services
             </h2>
@@ -73,7 +73,8 @@ const Merchant = () => {
           </div>
         </div>
       </div>
-      <MoreInfoForm/>
+      <div className="relative lg:mt-1 lg:relative mt-40"> <MoreInfoForm/></div>
+     
     </div>
   );
 };

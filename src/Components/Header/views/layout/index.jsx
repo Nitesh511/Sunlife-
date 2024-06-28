@@ -21,6 +21,7 @@ import Specalized_investment from "./specalized_investment/specalized_investment
 import Corporate_advisory from "./corporate_advisory/corporate_advisory";
 import OurServices from "./services/services";
 import Download_part from "./downloads/download_part";
+import "./dashboard.css"
 
 
 function Index (){

@@ -6,11 +6,11 @@ export default {
   ],
   theme: {
     extend: {
-      height: {
-        '1/4-screen': '25vh',
-        '1/2-screen':'50%',
-        '2/5-screen': '100vh',
-      },
+      // height: {
+      //   '1/4-screen': '25vh',
+      //   '1/2-screen':'50%',
+      //   '2/5-screen': '100vh',
+      // },
     },
   },
   plugins: [],

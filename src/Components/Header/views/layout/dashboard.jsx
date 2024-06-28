@@ -11,9 +11,6 @@ const Dashboard = () => {
   <div className="w-full h-64 sm:h-96 md:h-2/5 lg:h-2/5 xl:h-2/5 flex justify-center items-center overflow-hidden">
   <img src={dashboard} alt="Dashboard" className="w-full h-full object-cover" />
 </div>
-
-
-
       <OurServices />
       <MutualFundChart />
       <PortfolioService />

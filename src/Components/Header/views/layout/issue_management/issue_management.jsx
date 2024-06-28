@@ -30,11 +30,11 @@ const Issue_management = () => {
 
       {/* Text content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                <span className="text-blue-600 border-b-4 border-blue-900">
-                  Issue Management Service
-                </span>
-              </h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+          <span className="text-blue-600 border-b-4 border-blue-900">
+            Issue Management Service
+          </span>
+        </h1>
         <p className="text-lg">
           Sunlife Capital, born from the merger of Laxmi Capital and Sunrise
           Capital, stands as a beacon in the realm of issue management. Our
@@ -54,8 +54,8 @@ const Issue_management = () => {
       <CompanyTable />
 
       {/* More Info Form */}
-      <div className="relative mt-10 lg:mt-56">
-        <MoreInfoForm/>
+      <div className="relative mt-10 lg:mt-56 md:mt-36 mt-60">
+        <MoreInfoForm />
       </div>
     </div>
   );

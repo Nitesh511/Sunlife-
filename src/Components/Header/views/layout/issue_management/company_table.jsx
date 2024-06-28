@@ -32,28 +32,29 @@ const TableData = generateRandomData(100);
 
 const CompanyTable = () => {
   return (
-    <div className="container mx-auto p-4 lg:ml-96">
-      <table className="w-full sm:w-2/3 md:w-1/2 lg:w-2/4 xl:w-1/2 border-collapse">
-        <thead>
-          <tr className="bg-blue-600 text-white">
-            <th className="border border-gray-300 px-4 py-2">SN.</th>
-            <th className="border border-gray-300 px-4 py-2">Name of Companies</th>
-            <th className="border border-gray-300 px-4 py-2 px-8">Issue Type</th>
-            <th className="border border-gray-300 px-4 py-2">No. of Shares/ Debenture Issued</th>
-          </tr>
-        </thead>
-        <tbody>
-          {TableData.map((row) => (
-            <tr key={row.sn} className="bg-white">
-              <td className="border border-gray-300 px-4 py-2 text-center">{row.sn}</td>
-              <td className="border border-gray-300 px-4 py-2">{row.name}</td>
-              <td className="border border-gray-300 px-4 py-2 text-center">{row.issueType}</td>
-              <td className="border border-gray-300 px-4 py-2 text-right">{row.shares.toLocaleString()}</td>
+    <div className="container mx-auto p-4">
+      <div className="overflow-x-auto">
+        <table className="w-full whitespace-nowrap bg-white shadow-md border-collapse sm:rounded-lg">
+          <thead>
+            <tr className="bg-blue-600 text-white sticky top-0">
+              <th className="border border-gray-300 px-4 py-2">SN.</th>
+              <th className="border border-gray-300 px-4 py-2">Name of Companies</th>
+              <th className="border border-gray-300 px-4 py-2 sm:table-cell">Issue Type</th>
+              <th className="border border-gray-300 px-4 py-2 sm:table-cell">No. of Shares/ Debenture Issued</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-      
+          </thead>
+          <tbody className="divide-y divide-gray-200">
+            {TableData.map((row) => (
+              <tr key={row.sn} className="bg-gray-100">
+                <td className="border border-gray-300 px-4 py-2 text-center">{row.sn}</td>
+                <td className="border border-gray-300 px-4 py-2">{row.name}</td>
+                <td className="border border-gray-300 px-4 py-2 text-center sm:table-cell">{row.issueType}</td>
+                <td className="border border-gray-300 px-4 py-2 text-right sm:table-cell">{row.shares.toLocaleString()}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

@@ -36,7 +36,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="w-full">
+      <div className="">
         <nav className="bg-blue-500 w-full fixed top-12 z-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
@@ -328,14 +328,15 @@ const Navbar = () => {
                 >
                   Subha Laxmi Kosh
                 </a>
-              </div>
-
-              <div className="flex items-center">
                 <button className="bg-white text-orange-500 px-4 py-2 rounded-md text-base font-medium hover:bg-orange-100">
                   Login
                 </button>
+              </div>
+
+              <div className="flex items-center">
+              
                 <button
-                  className="lg:hidden ml-4 text-white"
+                  className="lg:hidden lg:ml-4 sm:mr-12 text-white"
                   onClick={() => setIsOpen(!isOpen)}
                 >
                   Menu
@@ -363,15 +364,17 @@ const Navbar = () => {
                 </button>
                 {dropdownOpen === "about" && (
                   <div className="relative bg-white mt-2 rounded-md shadow-lg w-60 overflow-y-auto max-h-60 ">
-                    <a href="#" className="block px-5 py-2 text-black">
+                    <Link className="block px-5 py-2 text-black" to={"/company_profile"}>
                       Company Profile
-                    </a>
-                    <a href="#" className="block px-5 py-2 text-black">
+                    </Link>
+                    <Link className="block px-5 py-2 text-black" to={
+                      "board_directors"
+                    }>
                       Board of Directors
-                    </a>
-                    <a href="#" className="block px-5 py-2 text-black">
+                    </Link>
+                    <Link href="#" className="block px-5 py-2 text-black" to={"/management_team"}>
                       Management Team
-                    </a>
+                    </Link>
                   </div>
                 )}
 
@@ -388,63 +391,64 @@ const Navbar = () => {
                       onClick={() => toggleNestedDropdown("merchantBanking")}
                       className="block px-4 py-2 text-black w-full text-left flex justify-between items-center"
                     >
-                      Merchant Banking
+                      <Link to={"/services/merchant_banking"}>Merchant Banking</Link>
                       <FontAwesomeIcon icon={faChevronRight} />
                     </button>
                     {nestedDropdownOpen === "merchantBanking" && (
                       <div className="relative bg-white mt-2 rounded-md shadow-lg w-60 overflow-y-auto max-h-60">
-                        <a href="#" className="block px-4 py-2 text-black">
+                        <Link className="block px-4 py-2 text-black" to={"/services/issue_management"}>
                           Issue Management
-                        </a>
-                        <a href="#" className="block px-4 py-2 text-black">
+                        </Link>
+                        <Link className="block px-4 py-2 text-black"  to={"/services/registrar"}>
                           Registrar To Share
-                        </a>
-                        <a href="#" className="block px-4 py-2 text-black">
+                        </Link>
+                        <Link href="#" className="block px-4 py-2 text-black" to={"/services/advisory_service"}>
                           Advisory Service
-                        </a>
-                        <a href="#" className="block px-4 py-2 text-black">
+                        </Link>
+                        <Link className="block px-4 py-2 text-black" to={"/services/underwriting_service"}>
                           Underwriting shares
-                        </a>
+                        </Link>
                       </div>
                     )}
                     <button
                       onClick={() => toggleNestedDropdown("mutualfund")}
                       className="block px-4 py-2 text-black w-full text-left flex justify-between items-center"
                     >
-                      Mutual Fund
+                    <Link to={"/services/mutual_fund_service"} >
+                    Mutual Fund</Link>
                       <FontAwesomeIcon icon={faChevronRight} />
                     </button>
                     {nestedDropdownOpenMutual === "mutualfund" && (
                       <div className="relative bg-white mt-2 rounded-md shadow-lg w-60 overflow-y-auto max-h-60">
+                        <Link className="block px-4 py-2 text-black" to={"/services/mutual_fund_service/sunlife_first_mutal"}>
+                        Sunlife First Mutal Fund
+                        </Link>
                         <a href="#" className="block px-4 py-2 text-black">
-                          Issue Management
+                        Sunlife Second Mutal Fund
                         </a>
                         <a href="#" className="block px-4 py-2 text-black">
-                          Registrar To Share
+                        Sunlife Third Mutal Fund
                         </a>
                         <a href="#" className="block px-4 py-2 text-black">
-                          Advisory Service
-                        </a>
-                        <a href="#" className="block px-4 py-2 text-black">
-                          Underwriting shares
+                        Sunlife Fourth Mutal Fund
                         </a>
                       </div>
                     )}
-                    <a href="#" className="block px-4 py-2 text-black">
+                    <Link className="block px-4 py-2 text-black" to={"/services/portfolio_management"}>
                       Portfolio Management Service
-                    </a>
-                    <a href="#" className="block px-4 py-2 text-black">
+                    </Link>
+                    <Link className="block px-4 py-2 text-black" to={"/services/depository_service"}>
                       Depository Participants
-                    </a>
-                    <a href="#" className="block px-4 py-2 text-black">
+                    </Link>
+                    <Link className="block px-4 py-2 text-black" to={"/services/specalized_investment"}>
                       Specialized Investment Fund
-                    </a>
-                    <a href="#" className="block px-4 py-2 text-black">
+                    </Link>
+                    <Link className="block px-4 py-2 text-black" to={"/services/cooperate_advisory"}>
                       Corporate Advisory Service
-                    </a>
-                    <a href="#" className="block px-4 py-2 text-black">
+                    </Link>
+                    <Link className="block px-4 py-2 text-black" to={"/services/our_services"}>
                       View All
-                    </a>
+                    </Link>
                   </div>
                 )}
 
@@ -457,9 +461,9 @@ const Navbar = () => {
                 </button>
                 {dropdownOpen === "information" && (
                   <div className="relative bg-white mt-2 rounded-md shadow-lg w-60 overflow-y-auto max-h-60">
-                    <a href="#" className="block px-4 py-2 text-black">
+                    <Link className="block px-4 py-2 text-black" to={"/downloads"}>
                       Downloads
-                    </a>
+                    </Link>
                     <a href="#" className="block px-4 py-2 text-black">
                       Reports
                     </a>
