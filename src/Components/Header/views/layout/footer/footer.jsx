@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-blue-600 to-orange-500 text-white py-10">
+    <footer className="bg-gradient-to-b from-blue-600 to-red-500 text-white py-10">
       <div className="container mx-auto px-4">
         {/* Investment Journey Section */}
         <div className="flex flex-wrap items-center justify-between mb-8 pb-8 border-b border-white/30">

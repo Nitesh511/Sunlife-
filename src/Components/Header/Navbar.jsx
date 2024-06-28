@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import MenuIcon from '@mui/icons-material/Menu';
 import {
   faChevronDown,
   faChevronRight,
@@ -13,6 +14,8 @@ const Navbar = () => {
   const [nestedDropdownOpen, setNestedDropdownOpen] = useState(null);
   const [nestedDropdownOpenMutual, setNestedDropdownOpenMutual] =
     useState(null);
+  const [nestedDropdownOpenDownload, setNestedDropdownOpenDownload] =
+    useState(null);
 
   const toggleDropdown = (section) => {
     setDropdownOpen(dropdownOpen === section ? null : section);
@@ -21,6 +24,9 @@ const Navbar = () => {
     }
     if (section !== "mutualfund") {
       setNestedDropdownOpenMutual(null);
+    }
+    if (section !== "download") {
+      setNestedDropdownOpenDownload(null);
     }
   };
 
@@ -31,13 +37,18 @@ const Navbar = () => {
       setNestedDropdownOpenMutual(
         nestedDropdownOpenMutual === section ? null : section
       );
+    } else if(section==="download"){
+      setNestedDropdownOpenDownload(
+        nestedDropdownOpenDownload === section ? null : section
+      );
+
     }
   };
 
   return (
     <>
       <div className="">
-        <nav className="bg-blue-500 w-full fixed top-12 z-20">
+        <nav className="bg-gradient-to-b from-blue-600 to-red-500 text-white w-full fixed top-12 z-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
               <div className="flex items-center">
@@ -233,46 +244,90 @@ const Navbar = () => {
                   </button>
                   {dropdownOpen === "information" && (
                     <div className="absolute bg-white mt-0 rounded-md shadow-lg w-60">
-                      <Link className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white" to={"/downloads"}
+            
+                    <div
+                        className="relative"
+                        onMouseEnter={() =>
+                          toggleNestedDropdown("download")
+                        }
+                        onMouseLeave={() => toggleNestedDropdown(null)}
+                      >
+                      <Link
+                        className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white flex justify-between items-center"
+                        to={"/downloads"}
                       >
                         Downloads
+                        <FontAwesomeIcon icon={faChevronRight} />
                       </Link>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-black   hover:bg-orange-600 hover:text-white"
+                      {nestedDropdownOpenDownload === "download" && (
+                          <div className="absolute top-0 left-full bg-white rounded-md shadow-lg w-60">
+                            <Link
+                              className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
+                              to={"/downloads/depository_participants"}
+                            >
+                             Depository Participant Related 
+                            </Link>
+                            <Link
+                              className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
+                              to={"/services/registrar"}
+                            >
+                              PMS Related 
+                            </Link>
+                            <Link
+                              className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
+                              to={"/services/advisory_service"}
+                            >
+                              Events
+                            </Link>
+                            <Link
+                              className="block px-4 py-2 text-black hover:bg-orange-600 hover:text-white"
+                              to={"/services/underwriting_service"}
+                            >
+                              Notices
+                            </Link>
+                            <Link
+                              className="block px-4 py-2 text-black hover:bg-orange-600 hover:text-white"
+                              to={"/services/underwriting_service"}
+                            >
+                              Prospectus
+                            </Link>
+                            <Link
+                              className="block px-4 py-2 text-black hover:bg-orange-600 hover:text-white"
+                              to={"/services/underwriting_service"}
+                            >
+                              Demat Related
+                            </Link>
+                          </div>
+                        
+                        )}
+                        </div>
+
+                      <Link className="block px-4 py-2 text-black   hover:bg-orange-600 hover:text-white" to={"/downloads/reports"}
                       >
                         Reports
-                      </a>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
+                      </Link>
+                      <Link className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white" to={"/downloads/news"}
                       >
                         News
-                      </a>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
+                      </Link>
+                      <Link className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white" to={"/downloads/notice_updates"}
                       >
                         Notices
-                      </a>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
+                      </Link>
+                      <Link className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white" to={"/downloads/faq"}
                       >
                         FAQ
-                      </a>
+                      </Link>
                       <a
                         href="#"
                         className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
                       >
                         Insights
                       </a>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
+                      <Link className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white" to={"/downloads/gallery"}
                       >
                         Gallery
-                      </a>
+                      </Link>
                     </div>
                   )}
                 </div>
@@ -288,18 +343,15 @@ const Navbar = () => {
                   </button>
                   {dropdownOpen === "results" && (
                     <div className="absolute bg-white mt-0 rounded-md shadow-lg w-60">
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
+                      <Link className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white" to={"/results/ipo_results"}
                       >
                         IPO Result
-                      </a>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
+                      </Link>
+                      <Link  
+                        className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"to={"/results/rights_share_results"}
                       >
                         Right Share Eligibility
-                      </a>
+                      </Link>
                       <a
                         href="#"
                         className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
@@ -334,12 +386,11 @@ const Navbar = () => {
               </div>
 
               <div className="flex items-center">
-              
                 <button
                   className="lg:hidden lg:ml-4 sm:mr-12 text-white"
                   onClick={() => setIsOpen(!isOpen)}
                 >
-                  Menu
+                  <MenuIcon/> 
                 </button>
               </div>
             </div>
@@ -364,15 +415,23 @@ const Navbar = () => {
                 </button>
                 {dropdownOpen === "about" && (
                   <div className="relative bg-white mt-2 rounded-md shadow-lg w-60 overflow-y-auto max-h-60 ">
-                    <Link className="block px-5 py-2 text-black" to={"/company_profile"}>
+                    <Link
+                      className="block px-5 py-2 text-black"
+                      to={"/company_profile"}
+                    >
                       Company Profile
                     </Link>
-                    <Link className="block px-5 py-2 text-black" to={
-                      "board_directors"
-                    }>
+                    <Link
+                      className="block px-5 py-2 text-black"
+                      to={"board_directors"}
+                    >
                       Board of Directors
                     </Link>
-                    <Link href="#" className="block px-5 py-2 text-black" to={"/management_team"}>
+                    <Link
+                      href="#"
+                      className="block px-5 py-2 text-black"
+                      to={"/management_team"}
+                    >
                       Management Team
                     </Link>
                   </div>
@@ -391,21 +450,36 @@ const Navbar = () => {
                       onClick={() => toggleNestedDropdown("merchantBanking")}
                       className="block px-4 py-2 text-black w-full text-left flex justify-between items-center"
                     >
-                      <Link to={"/services/merchant_banking"}>Merchant Banking</Link>
+                      <Link to={"/services/merchant_banking"}>
+                        Merchant Banking
+                      </Link>
                       <FontAwesomeIcon icon={faChevronRight} />
                     </button>
                     {nestedDropdownOpen === "merchantBanking" && (
                       <div className="relative bg-white mt-2 rounded-md shadow-lg w-60 overflow-y-auto max-h-60">
-                        <Link className="block px-4 py-2 text-black" to={"/services/issue_management"}>
+                        <Link
+                          className="block px-4 py-2 text-black"
+                          to={"/services/issue_management"}
+                        >
                           Issue Management
                         </Link>
-                        <Link className="block px-4 py-2 text-black"  to={"/services/registrar"}>
+                        <Link
+                          className="block px-4 py-2 text-black"
+                          to={"/services/registrar"}
+                        >
                           Registrar To Share
                         </Link>
-                        <Link href="#" className="block px-4 py-2 text-black" to={"/services/advisory_service"}>
+                        <Link
+                          href="#"
+                          className="block px-4 py-2 text-black"
+                          to={"/services/advisory_service"}
+                        >
                           Advisory Service
                         </Link>
-                        <Link className="block px-4 py-2 text-black" to={"/services/underwriting_service"}>
+                        <Link
+                          className="block px-4 py-2 text-black"
+                          to={"/services/underwriting_service"}
+                        >
                           Underwriting shares
                         </Link>
                       </div>
@@ -414,39 +488,60 @@ const Navbar = () => {
                       onClick={() => toggleNestedDropdown("mutualfund")}
                       className="block px-4 py-2 text-black w-full text-left flex justify-between items-center"
                     >
-                    <Link to={"/services/mutual_fund_service"} >
-                    Mutual Fund</Link>
+                      <Link to={"/services/mutual_fund_service"}>
+                        Mutual Fund
+                      </Link>
                       <FontAwesomeIcon icon={faChevronRight} />
                     </button>
                     {nestedDropdownOpenMutual === "mutualfund" && (
                       <div className="relative bg-white mt-2 rounded-md shadow-lg w-60 overflow-y-auto max-h-60">
-                        <Link className="block px-4 py-2 text-black" to={"/services/mutual_fund_service/sunlife_first_mutal"}>
-                        Sunlife First Mutal Fund
+                        <Link
+                          className="block px-4 py-2 text-black"
+                          to={
+                            "/services/mutual_fund_service/sunlife_first_mutal"
+                          }
+                        >
+                          Sunlife First Mutal Fund
                         </Link>
                         <a href="#" className="block px-4 py-2 text-black">
-                        Sunlife Second Mutal Fund
+                          Sunlife Second Mutal Fund
                         </a>
                         <a href="#" className="block px-4 py-2 text-black">
-                        Sunlife Third Mutal Fund
+                          Sunlife Third Mutal Fund
                         </a>
                         <a href="#" className="block px-4 py-2 text-black">
-                        Sunlife Fourth Mutal Fund
+                          Sunlife Fourth Mutal Fund
                         </a>
                       </div>
                     )}
-                    <Link className="block px-4 py-2 text-black" to={"/services/portfolio_management"}>
+                    <Link
+                      className="block px-4 py-2 text-black"
+                      to={"/services/portfolio_management"}
+                    >
                       Portfolio Management Service
                     </Link>
-                    <Link className="block px-4 py-2 text-black" to={"/services/depository_service"}>
+                    <Link
+                      className="block px-4 py-2 text-black"
+                      to={"/services/depository_service"}
+                    >
                       Depository Participants
                     </Link>
-                    <Link className="block px-4 py-2 text-black" to={"/services/specalized_investment"}>
+                    <Link
+                      className="block px-4 py-2 text-black"
+                      to={"/services/specalized_investment"}
+                    >
                       Specialized Investment Fund
                     </Link>
-                    <Link className="block px-4 py-2 text-black" to={"/services/cooperate_advisory"}>
+                    <Link
+                      className="block px-4 py-2 text-black"
+                      to={"/services/cooperate_advisory"}
+                    >
                       Corporate Advisory Service
                     </Link>
-                    <Link className="block px-4 py-2 text-black" to={"/services/our_services"}>
+                    <Link
+                      className="block px-4 py-2 text-black"
+                      to={"/services/our_services"}
+                    >
                       View All
                     </Link>
                   </div>
@@ -461,27 +556,64 @@ const Navbar = () => {
                 </button>
                 {dropdownOpen === "information" && (
                   <div className="relative bg-white mt-2 rounded-md shadow-lg w-60 overflow-y-auto max-h-60">
-                    <Link className="block px-4 py-2 text-black" to={"/downloads"}>
-                      Downloads
-                    </Link>
-                    <a href="#" className="block px-4 py-2 text-black">
+
+                   <button
+                      onClick={() => toggleNestedDropdown("download")}
+                      className="block px-4 py-2 text-black w-full text-left flex justify-between items-center"
+                    >
+                      <Link to={"/downloads"}>
+                        Downloads
+                      </Link>
+                      <FontAwesomeIcon icon={faChevronRight} />
+                      </button>
+                      {nestedDropdownOpenDownload === "download" && (
+                      <div className="relative bg-white mt-2 rounded-md shadow-lg w-60 overflow-y-auto max-h-60">
+                        <Link
+                          className="block px-4 py-2 text-black"
+                          to={"/downloads/depository_participants"}
+                        >
+                          Depository Participants
+                        </Link>
+                        <Link
+                          className="block px-4 py-2 text-black"
+                          to={"/services/registrar"}
+                        >
+                          Registrar To Share
+                        </Link>
+                        <Link
+                          href="#"
+                          className="block px-4 py-2 text-black"
+                          to={"/services/advisory_service"}
+                        >
+                          Advisory Service
+                        </Link>
+                        <Link
+                          className="block px-4 py-2 text-black"
+                          to={"/services/underwriting_service"}
+                        >
+                          Underwriting shares
+                        </Link>
+                      </div>
+                    )}
+                
+                    <Link className="block px-4 py-2 text-black" to={"/downloads/reports"}>
                       Reports
-                    </a>
-                    <a href="#" className="block px-4 py-2 text-black">
+                    </Link>
+                    <Link className="block px-4 py-2 text-black" to={"/downloads/news"}>
                       News
-                    </a>
-                    <a href="#" className="block px-4 py-2 text-black">
+                    </Link>
+                    <Link className="block px-4 py-2 text-black" to={"/downloads/notice_updates"}>
                       Notices
-                    </a>
-                    <a href="#" className="block px-4 py-2 text-black">
+                    </Link>
+                    <Link className="block px-4 py-2 text-black" to={"/downloads/faq"}>
                       FAQ
-                    </a>
+                    </Link>
                     <a href="#" className="block px-4 py-2 text-black">
                       Insights
                     </a>
-                    <a href="#" className="block px-4 py-2 text-black">
+                    <Link className="block px-4 py-2 text-black" to={"/downloads/gallery"}>
                       Gallery
-                    </a>
+                    </Link>
                   </div>
                 )}
 
@@ -494,12 +626,12 @@ const Navbar = () => {
                 </button>
                 {dropdownOpen === "results" && (
                   <div className="relative bg-white mt-2 rounded-md shadow-lg w-60 overflow-y-auto max-h-60">
-                    <a href="#" className="block px-4 py-2 text-black">
+                    <Link className="block px-4 py-2 text-black" to={"/results/ipo_results"}>
                       IPO Result
-                    </a>
-                    <a href="#" className="block px-4 py-2 text-black">
+                    </Link>
+                    <Link className="block px-4 py-2 text-black" to={"/results/rights_share_results"}>
                       Right Share Eligibility
-                    </a>
+                    </Link>
                     <a href="#" className="block px-4 py-2 text-black">
                       Tax Liability Check
                     </a>

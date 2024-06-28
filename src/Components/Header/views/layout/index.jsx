@@ -22,6 +22,15 @@ import Corporate_advisory from "./corporate_advisory/corporate_advisory";
 import OurServices from "./services/services";
 import Download_part from "./downloads/download_part";
 import "./dashboard.css"
+import Download_depository from "./downloads/depsitory_parti";
+import Reports_downloads from "./reports/reports";
+import News_part from "./news/news_part";
+import NoticesAndUpdates from "./portfolio/noticecard";
+import Faq_downloads from "./FAQ/faq";
+import Gallery from "./gallery/gallery";
+import Ipo_results from "./ipo_results/ipo_results";
+import RightsShareResult from "./rights_share/rights_share_result";
+import Rights_ShareResult from "./rights_share/rights_share_result";
 
 
 function Index (){
@@ -47,6 +56,19 @@ function Index (){
     <Route path="/services/cooperate_advisory" element={<Corporate_advisory/>}></Route>
     <Route path="/services/our_services" element={<OurServices/>}></Route>
     <Route path="/downloads" element={<Download_part/>}></Route>
+    <Route path="/downloads/depository_participants" element={<Download_depository/>}></Route>
+    <Route path="/downloads/reports" element={<Reports_downloads/>}></Route>
+    <Route path="/downloads/news" element={<News_part/>}></Route>
+    <Route path="/downloads/notice_updates" element={<div className="mt-60"><NoticesAndUpdates/></div>}></Route>
+    <Route path="/downloads/faq" element={<Faq_downloads/>}></Route>
+    <Route path="/downloads/gallery" element={<Gallery/>}></Route>
+    <Route path="/results/ipo_results" element={<Ipo_results/>}></Route>
+    <Route path="/results/rights_share_results" element={<Rights_ShareResult/>}></Route>
+
+    
+    
+    
+    
 
 
 

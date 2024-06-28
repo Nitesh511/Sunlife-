@@ -1,18 +1,7 @@
 import React from "react";
 import Company from "../../../../../assets/company.jpg";
-
 function DocumentList() {
-  const categories = [
-    "Mutual Fund Related",
-    "Depository Participant Related",
-    "PMS related",
-    "Events",
-    "Notices",
-    "Prospectus",
-    "Subha Laxmi Kosh Related",
-    "RTA related forms",
-    "Demat Related",
-  ];
+  const categories = ["Monthly Report", "Annual Report"];
 
   return (
     <div className="flex flex-col lg:flex-row">
@@ -34,7 +23,7 @@ function DocumentList() {
                 d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
               />
             </svg>
-            <span className="text-gray-700">SIP CANCELLATION FORM</span>
+            <span className="text-gray-700">Monthly Report Download</span>
           </div>
           <button className="bg-blue-500 text-white px-4 py-2 rounded uppercase text-sm font-bold">
             Download
@@ -59,7 +48,7 @@ function DocumentList() {
   );
 }
 
-const Download_part = () => {
+const Reports_downloads = () => {
   return (
     <div>
       <div className="relative h-96 bg-gray-300 overflow-hidden">
@@ -78,11 +67,11 @@ const Download_part = () => {
         {/* Content */}
         <div className="relative h-full flex flex-col justify-between p-8 lg:p-32 text-white">
           {/* Title */}
-          <div className="max-w-7xl mx-auto">
-            <h1 className="text-4xl font-bold text-left mr-80 md:text-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:mt-32 lg:ml-72 text-center">
+            <h1 className="text-4xl font-bold inline-block md:text-left">
               Downloads
             </h1>
-          </div>
+          </div>    
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -92,4 +81,4 @@ const Download_part = () => {
   );
 };
 
-export default Download_part;
+export default Reports_downloads;
