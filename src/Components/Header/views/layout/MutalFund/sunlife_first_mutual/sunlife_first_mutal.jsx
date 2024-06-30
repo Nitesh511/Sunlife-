@@ -27,7 +27,7 @@ const Sunlife_first_mutal = () => {
         </div>
       </div>
       <ChartComponent/>
-      <div className="relative mt-40">
+      <div className="relative mt-0 lg:mt-60">
           <MoreInfoForm/>
           </div>
         

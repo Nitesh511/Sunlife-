@@ -58,7 +58,7 @@ const RegistrarTable = () => {
           </table>
         </div>
       </div>
-      <div className="relative mt-40 lg:mt-56">
+      <div className="relative mt-10 lg:mt-60">
         <MoreInfoForm />
       </div>
     </div>

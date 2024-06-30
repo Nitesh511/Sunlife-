@@ -86,7 +86,7 @@ const UnderwritingServiceTable = () => {
       </div>
      
     </div>
-    <div className="relative mt-40">
+    <div className="relative mt-0 lg:mt-60">
         <MoreInfoForm/>
       </div>
     </div>

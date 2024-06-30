@@ -6,19 +6,19 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         {/* Investment Journey Section */}
         <div className="flex flex-wrap items-center justify-between mb-8 pb-8 border-b border-white/30">
-          <div>
+          <div className="w-full md:w-auto mb-4 md:mb-0 md:text-right">
             <h2 className="text-3xl font-bold mb-2">Start Your Investment Journey</h2>
             <p className="text-sm">Leave your contact details, We will contact you soon.</p>
           </div>
-          <div className="flex gap-4 mt-4 lg:mt-0">
-            <input type="email" placeholder="Email" className="p-2 rounded text-black w-40" />
-            <input type="tel" placeholder="Phone No." className="p-2 rounded text-black w-40" />
+          <div className="flex flex-col md:flex-row gap-4 items-center w-full md:w-auto md:justify-end">
+            <input type="email" placeholder="Email" className="p-2 rounded text-black w-full md:w-auto md:w-40" />
+            <input type="tel" placeholder="Phone No." className="p-2 rounded text-black w-full md:w-auto md:w-40" />
             <button type="submit" className="bg-white text-orange-600 px-6 py-2 rounded font-semibold">SUBMIT</button>
           </div>
         </div>
 
         {/* Links Section */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <h3 className="font-bold text-lg mb-2">Quick Links</h3>
             <ul className="text-lg space-y-4">

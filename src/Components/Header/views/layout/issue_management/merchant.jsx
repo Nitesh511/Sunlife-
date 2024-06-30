@@ -22,17 +22,18 @@ const Merchant = () => {
         {/* Content */}
         <div className="relative h-full flex flex-col justify-between p-32 text-white">
           {/* Title */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
           <h1 className="text-4xl font-bold">Merchant Banking</h1>
         </div>
       </div>
-      <div className="bg-white min-h-screen flex items-center justify-center">
-        <div className="max-w-8xl mx-auto px-4 py-8 md:flex md:items-center md:space-x-8 md:-mt-96">
-          <div className="md:w-2/2">
-            <div className="bg-white p-8 md:p-32">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+
+      <div className="bg-white min-h-screen">
+        <div className="max-w-8xl mx-auto px-4 py-8 md:flex md:items-center md:space-x-8 md:-mt-60 md:mr-12">
+          {/* Left Side (Details) */}
+          <div className="md:w-2/3">
+            <div className="bg-white p-8 md:p-32 lg:mt-32">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
                 <span className="text-blue-600 border-b-4 border-blue-900">
-                 Merchant Banking
+                  Merchant Banking
                 </span>
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed">
@@ -48,33 +49,45 @@ const Merchant = () => {
           </div>
 
           {/* Right Side (Services List) */}
-          <div className="md:w-1/2 mb-4 md:mb-0 lg:mt-24 ">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">
-              Merchant Banking Services
-            </h2>
-            <ul className="list-none space-y-4">
-              <li className="relative group mb-4 text-lg text-gray-700 border p-4 hover:text-white">
-                <Link to={"/services/issue_management"}> <span className="z-10 relative">Issue Management</span></Link>
-                <span className="absolute left-0 bottom-0 h-full w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
-              </li>
-              <li className="relative group mb-4 text-lg text-gray-700 border p-4 hover:text-white">
-                <Link to={"/services/registrar"}><span className="z-10 relative">Registrar To Share</span></Link>
-                <span className="absolute left-0 bottom-0 h-full w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
-              </li>
-              <li className="relative group mb-4 text-lg text-gray-700 border p-4 hover:text-white">
-                <Link to={"/services/advisory_service"}><span className="z-10 relative">Advisory Service</span></Link>
-                <span className="absolute left-0 bottom-0 h-full w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
-              </li>
-              <li className="relative group mb-4 text-lg text-gray-700 border p-4 hover:text-white">
-                <Link to={"/services/underwriting_service"}><span className="z-10 relative">Underwriting Shares</span></Link>
-                <span className="absolute left-0 bottom-0 h-full w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
-              </li>
-            </ul>
+          <div className="md:w-1/3">
+            <div className="bg-white p-8 md:p-12 lg:p-16 lg:mt-40">
+              <h2 className="text-3xl font-bold text-gray-800 mb-6">
+                Merchant Banking Services
+              </h2>
+              <ul className="list-none space-y-4">
+                <li className="relative group mb-4 text-lg text-gray-700 border p-4 hover:text-white">
+                  <Link to={"/services/issue_management"}>
+                    <span className="z-10 relative">Issue Management</span>
+                  </Link>
+                  <span className="absolute left-0 bottom-0 h-full w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                </li>
+                <li className="relative group mb-4 text-lg text-gray-700 border p-4 hover:text-white">
+                  <Link to={"/services/registrar"}>
+                    <span className="z-10 relative">Registrar To Share</span>
+                  </Link>
+                  <span className="absolute left-0 bottom-0 h-full w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                </li>
+                <li className="relative group mb-4 text-lg text-gray-700 border p-4 hover:text-white">
+                  <Link to={"/services/advisory_service"}>
+                    <span className="z-10 relative">Advisory Service</span>
+                  </Link>
+                  <span className="absolute left-0 bottom-0 h-full w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                </li>
+                <li className="relative group mb-4 text-lg text-gray-700 border p-4 hover:text-white">
+                  <Link to={"/services/underwriting_service"}>
+                    <span className="z-10 relative">Underwriting Shares</span>
+                  </Link>
+                  <span className="absolute left-0 bottom-0 h-full w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-      <div className="relative lg:mt-1 lg:relative mt-40"> <MoreInfoForm/></div>
-     
+
+      <div className="relative mt-0 lg:mt-60">
+        <MoreInfoForm />
+      </div>
     </div>
   );
 };

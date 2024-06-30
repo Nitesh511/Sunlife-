@@ -97,7 +97,7 @@ const Advisory_Issue = () => {
           </p>
         </div>
       </div>
-      <div className="relative mt-40">    <MoreInfoForm/> </div>
+      <div className="relative mt-0 lg:mt-60"> <MoreInfoForm/> </div>
   
     </div>
   );

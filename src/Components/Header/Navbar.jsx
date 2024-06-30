@@ -52,7 +52,7 @@ const Navbar = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
               <div className="flex items-center">
-                <img src={logo} alt="LS Capital" className="h-20 w-20 mr-3" />
+                <Link to={"/"}><img src={logo} alt="LS Capital" className="h-20 w-20 mr-3" /></Link>
               </div>
 
               <div className="hidden lg:flex space-x-4">

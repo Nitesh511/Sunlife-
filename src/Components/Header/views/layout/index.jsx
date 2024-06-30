@@ -60,12 +60,12 @@ function Index (){
     <Route path="/services/depository_service" element={<Depository_part/>}></Route>
     <Route path="/services/specalized_investment" element={<Specalized_investment/>}></Route>
     <Route path="/services/cooperate_advisory" element={<Corporate_advisory/>}></Route>
-    <Route path="/services/our_services" element={<OurServices/>}></Route>
+    <Route path="/services/our_services" element={<div className="mt-48"><OurServices/></div>}></Route>
     <Route path="/downloads" element={<Download_part/>}></Route>
     <Route path="/downloads/depository_participants" element={<Download_depository/>}></Route>
     <Route path="/downloads/reports" element={<Reports_downloads/>}></Route>
     <Route path="/downloads/news" element={<News_part/>}></Route>
-    <Route path="/downloads/notice_updates" element={<div className="mt-60"><NoticesAndUpdates/></div>}></Route>
+    <Route path="/downloads/notice_updates" element={<div className="mt-32"><NoticesAndUpdates/></div>}></Route>
     <Route path="/downloads/faq" element={<Faq_downloads/>}></Route>
     <Route path="/downloads/gallery" element={<Gallery/>}></Route>
     <Route path="/results/ipo_results" element={<Ipo_results/>}></Route>
