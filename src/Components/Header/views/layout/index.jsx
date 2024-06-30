@@ -31,12 +31,18 @@ import Gallery from "./gallery/gallery";
 import Ipo_results from "./ipo_results/ipo_results";
 import RightsShareResult from "./rights_share/rights_share_result";
 import Rights_ShareResult from "./rights_share/rights_share_result";
+import PMSForm from "./pms_form/pms_fourm";
+import LoginForm from "./login/login_form";
+
 
 
 function Index (){
   return (
    <BrowserRouter>
-    <Topnav/>
+ 
+   <Topnav/>
+ 
+    
     <Navbar/>
     <Routes>
     <Route path="/" element={<Dashboard/>}></Route>
@@ -64,6 +70,8 @@ function Index (){
     <Route path="/downloads/gallery" element={<Gallery/>}></Route>
     <Route path="/results/ipo_results" element={<Ipo_results/>}></Route>
     <Route path="/results/rights_share_results" element={<Rights_ShareResult/>}></Route>
+    <Route path="/online_service/pms_form" element={<PMSForm/>}></Route>
+    <Route path="/login" element={<LoginForm/>}></Route>
 
     
     

@@ -4,3 +4,29 @@
   line-height: 20px; /* Adjust the line height if necessary */
 }
 
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  width: calc(100% - 80px); /* Adjust width as needed */
+ 
+}
+
+.marquee .highlight-item {
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+}
+
+.marquee .highlight-item.show {
+  animation: none; /* Stop animation when showing */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+

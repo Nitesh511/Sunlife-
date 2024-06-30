@@ -8,13 +8,21 @@ import AdvisoryService from "./portfolio/advisory_service";
 const Dashboard = () => {
   return (
     <div>
-  <div className="w-full h-64 sm:h-96 md:h-2/5 lg:h-2/5 xl:h-2/5 flex justify-center items-center overflow-hidden">
-  <img src={dashboard} alt="Dashboard" className="w-full h-full object-cover" />
-</div>
+      <div className="w-full h-96 sm:h-96 md:h-2/5 lg:h-2/5 xl:h-2/5 flex justify-center items-center overflow-hidden">
+        <img
+          src={dashboard}
+          alt="Dashboard"
+          className="w-full h-full object-cover"
+        />
+      </div>
       <OurServices />
       <MutualFundChart />
-      <PortfolioService />
-      <AdvisoryService />
+      <div className="relative -mt-2">
+        <PortfolioService />
+      </div>
+      <div className="relative lg:-mt-52 -mt-24">
+        <AdvisoryService />
+      </div>
     </div>
   );
 };

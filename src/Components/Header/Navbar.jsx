@@ -368,24 +368,65 @@ const Navbar = () => {
                   )}
                 </div>
 
-                <a
-                  href="#"
-                  className="text-white hover:bg-orange-600 px-3 py-2 rounded-md text-base font-medium"
-                >
-                  Online Services
-                </a>
-                <a
-                  href="#"
-                  className="text-white hover:bg-orange-600 px-3 py-2 rounded-md text-base font-medium"
-                >
-                  Subha Laxmi Kosh
-                </a>
-                <button className="bg-white text-orange-500 px-4 py-2 rounded-md text-base font-medium hover:bg-orange-100">
-                  Login
-                </button>
-              </div>
 
-              <div className="flex items-center">
+                <div
+                  className="relative"
+                  onMouseEnter={() => toggleDropdown("online")}
+                  onMouseLeave={() => toggleDropdown(null)}
+                >
+
+                  <button  className="text-white hover:bg-orange-600 px-3 py-2  hover:bg-orange-600 hover:text-white rounded-md text-base font-medium flex items-center">
+                  Online Services
+                  <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
+
+                  </button>
+                  {dropdownOpen === "online" && (
+                    <div className="absolute bg-white mt-0 rounded-md shadow-lg w-60">
+                      <Link className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white" to={"/online_service/pms_form"}
+                      >
+                       PMS Form
+                      </Link>
+                      
+                   
+                    </div>
+                  )}
+                </div>
+                <a
+                  href="#"
+                  className="text-white hover:bg-orange-600 px-3 py-2 rounded-md text-base font-medium"
+                >
+                  Sunlife Kosh
+                </a>
+                
+              </div>
+              <div
+                  className="relative"
+                  onMouseEnter={() => toggleDropdown("login")}
+                  onMouseLeave={() => toggleDropdown(null)}
+                >
+
+                  <button  className="bg-white text-orange-500 px-4 py-2 rounded-md text-base font-medium hover:bg-orange-100">
+                  Login
+                  <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
+
+                  </button>
+                  {dropdownOpen === "login" && (
+                    <div className="absolute bg-white mt-0 rounded-md shadow-lg w-32  ">
+                      <Link className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white" to={"/login"}
+                      >
+                       PMS Login
+                      </Link>
+                      <a className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white" href="https://meroshare.cdsc.com.np/#/login" 
+                      >
+                      MeroShare Login
+                      </a>
+                      
+                   
+                    </div>
+                  )}
+                </div>
+
+              <div className="flex items-center absolute ml-56">
                 <button
                   className="lg:hidden lg:ml-4 sm:mr-12 text-white"
                   onClick={() => setIsOpen(!isOpen)}
@@ -402,6 +443,7 @@ const Navbar = () => {
                 <Link
                   className="text-white hover:bg-orange-600 block px-3 py-2 rounded-md text-base font-medium"
                   to={"/"}
+                  onClick={() => setIsOpen(!isOpen)}
                 >
                   Home
                 </Link>
@@ -418,19 +460,22 @@ const Navbar = () => {
                     <Link
                       className="block px-5 py-2 text-black"
                       to={"/company_profile"}
+                      onClick={() => setIsOpen(!isOpen)}
                     >
                       Company Profile
                     </Link>
                     <Link
                       className="block px-5 py-2 text-black"
                       to={"board_directors"}
+                      onClick={() => setIsOpen(!isOpen)}
                     >
                       Board of Directors
                     </Link>
                     <Link
                       href="#"
                       className="block px-5 py-2 text-black"
-                      to={"/management_team"}
+                      to={"/management_team"} 
+                      onClick={() => setIsOpen(!isOpen)}
                     >
                       Management Team
                     </Link>
@@ -450,7 +495,8 @@ const Navbar = () => {
                       onClick={() => toggleNestedDropdown("merchantBanking")}
                       className="block px-4 py-2 text-black w-full text-left flex justify-between items-center"
                     >
-                      <Link to={"/services/merchant_banking"}>
+                      <Link to={"/services/merchant_banking"}
+                       onClick={() => setIsOpen(!isOpen)}>
                         Merchant Banking
                       </Link>
                       <FontAwesomeIcon icon={faChevronRight} />
@@ -460,25 +506,29 @@ const Navbar = () => {
                         <Link
                           className="block px-4 py-2 text-black"
                           to={"/services/issue_management"}
+                          onClick={() => setIsOpen(!isOpen)}
                         >
                           Issue Management
                         </Link>
                         <Link
                           className="block px-4 py-2 text-black"
                           to={"/services/registrar"}
+                          onClick={() => setIsOpen(!isOpen)}
                         >
                           Registrar To Share
                         </Link>
                         <Link
-                          href="#"
+                 
                           className="block px-4 py-2 text-black"
                           to={"/services/advisory_service"}
+                          onClick={() => setIsOpen(!isOpen)}
                         >
                           Advisory Service
                         </Link>
                         <Link
                           className="block px-4 py-2 text-black"
                           to={"/services/underwriting_service"}
+                          onClick={() => setIsOpen(!isOpen)}
                         >
                           Underwriting shares
                         </Link>
@@ -488,7 +538,8 @@ const Navbar = () => {
                       onClick={() => toggleNestedDropdown("mutualfund")}
                       className="block px-4 py-2 text-black w-full text-left flex justify-between items-center"
                     >
-                      <Link to={"/services/mutual_fund_service"}>
+                      <Link to={"/services/mutual_fund_service"}
+                       onClick={() => setIsOpen(!isOpen)}>
                         Mutual Fund
                       </Link>
                       <FontAwesomeIcon icon={faChevronRight} />
@@ -517,30 +568,35 @@ const Navbar = () => {
                     <Link
                       className="block px-4 py-2 text-black"
                       to={"/services/portfolio_management"}
+                      onClick={() => setIsOpen(!isOpen)}
                     >
                       Portfolio Management Service
                     </Link>
                     <Link
                       className="block px-4 py-2 text-black"
                       to={"/services/depository_service"}
+                      onClick={() => setIsOpen(!isOpen)}
                     >
                       Depository Participants
                     </Link>
                     <Link
                       className="block px-4 py-2 text-black"
                       to={"/services/specalized_investment"}
+                      onClick={() => setIsOpen(!isOpen)}
                     >
                       Specialized Investment Fund
                     </Link>
                     <Link
                       className="block px-4 py-2 text-black"
                       to={"/services/cooperate_advisory"}
+                      onClick={() => setIsOpen(!isOpen)}
                     >
                       Corporate Advisory Service
                     </Link>
                     <Link
                       className="block px-4 py-2 text-black"
                       to={"/services/our_services"}
+                      onClick={() => setIsOpen(!isOpen)}
                     >
                       View All
                     </Link>
@@ -561,7 +617,7 @@ const Navbar = () => {
                       onClick={() => toggleNestedDropdown("download")}
                       className="block px-4 py-2 text-black w-full text-left flex justify-between items-center"
                     >
-                      <Link to={"/downloads"}>
+                      <Link to={"/downloads"}  onClick={() => setIsOpen(!isOpen)}>
                         Downloads
                       </Link>
                       <FontAwesomeIcon icon={faChevronRight} />
@@ -571,12 +627,14 @@ const Navbar = () => {
                         <Link
                           className="block px-4 py-2 text-black"
                           to={"/downloads/depository_participants"}
+                          onClick={() => setIsOpen(!isOpen)}
                         >
                           Depository Participants
                         </Link>
                         <Link
                           className="block px-4 py-2 text-black"
                           to={"/services/registrar"}
+                          onClick={() => setIsOpen(!isOpen)}
                         >
                           Registrar To Share
                         </Link>
@@ -584,34 +642,36 @@ const Navbar = () => {
                           href="#"
                           className="block px-4 py-2 text-black"
                           to={"/services/advisory_service"}
+                          onClick={() => setIsOpen(!isOpen)}
                         >
                           Advisory Service
                         </Link>
                         <Link
                           className="block px-4 py-2 text-black"
                           to={"/services/underwriting_service"}
+                          onClick={() => setIsOpen(!isOpen)}
                         >
                           Underwriting shares
                         </Link>
                       </div>
                     )}
                 
-                    <Link className="block px-4 py-2 text-black" to={"/downloads/reports"}>
+                    <Link className="block px-4 py-2 text-black" to={"/downloads/reports"}  onClick={() => setIsOpen(!isOpen)}>
                       Reports
                     </Link>
-                    <Link className="block px-4 py-2 text-black" to={"/downloads/news"}>
+                    <Link className="block px-4 py-2 text-black" to={"/downloads/news"}  onClick={() => setIsOpen(!isOpen)}>
                       News
                     </Link>
-                    <Link className="block px-4 py-2 text-black" to={"/downloads/notice_updates"}>
+                    <Link className="block px-4 py-2 text-black" to={"/downloads/notice_updates"}  onClick={() => setIsOpen(!isOpen)}>
                       Notices
                     </Link>
-                    <Link className="block px-4 py-2 text-black" to={"/downloads/faq"}>
+                    <Link className="block px-4 py-2 text-black" to={"/downloads/faq"}  onClick={() => setIsOpen(!isOpen)}>
                       FAQ
                     </Link>
                     <a href="#" className="block px-4 py-2 text-black">
                       Insights
                     </a>
-                    <Link className="block px-4 py-2 text-black" to={"/downloads/gallery"}>
+                    <Link className="block px-4 py-2 text-black" to={"/downloads/gallery"}  onClick={() => setIsOpen(!isOpen)}>
                       Gallery
                     </Link>
                   </div>
@@ -626,10 +686,10 @@ const Navbar = () => {
                 </button>
                 {dropdownOpen === "results" && (
                   <div className="relative bg-white mt-2 rounded-md shadow-lg w-60 overflow-y-auto max-h-60">
-                    <Link className="block px-4 py-2 text-black" to={"/results/ipo_results"}>
+                    <Link className="block px-4 py-2 text-black" to={"/results/ipo_results"}  onClick={() => setIsOpen(!isOpen)}>
                       IPO Result
                     </Link>
-                    <Link className="block px-4 py-2 text-black" to={"/results/rights_share_results"}>
+                    <Link className="block px-4 py-2 text-black" to={"/results/rights_share_results"}  onClick={() => setIsOpen(!isOpen)}>
                       Right Share Eligibility
                     </Link>
                     <a href="#" className="block px-4 py-2 text-black">
@@ -641,17 +701,29 @@ const Navbar = () => {
                   </div>
                 )}
 
-                <a
-                  href="#"
+                
+                <button
+                  onClick={() => toggleDropdown("online")}
                   className="text-white hover:bg-orange-600 block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Online Services
-                </a>
+                  <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
+                </button>
+                {dropdownOpen === "online" && (
+                  <div className="relative bg-white mt-2 rounded-md shadow-lg w-60 overflow-y-auto max-h-60">
+                    <Link className="block px-4 py-2 text-black" to={"/online_service/pms_form"}  onClick={() => setIsOpen(!isOpen)}>
+                      PMS Form
+                    </Link>
+                   
+                  </div>
+                )}
+
+               
                 <a
                   href="#"
                   className="text-white hover:bg-orange-600 block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Subha Laxmi Kosh
+                  Sunlife Kosh
                 </a>
               </div>
             </div>

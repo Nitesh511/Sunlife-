@@ -27,7 +27,7 @@ const CompanyProfileHeader = () => {
           <h1 className="text-4xl font-bold">Company Profile</h1>
         </div>
       </div>
-      <div className="bg-white min-h-screen flex items-center justify-center">
+      <div className="bg-white min-h-screen flex items-center justify-center lg:-mt-28">
         <div className="max-w-8xl mx-auto px-4 py-8 md:flex md:items-center md:space-x-8">
           {/* Left Side (Text Content) */}
           <div className="md:w-1/2">
