@@ -1,5 +1,5 @@
 import React from "react";
-import Company from "../../../../.././assets/company.jpg";
+import Company from "../../../../../assets/company.jpg";
 import FundList from "./fund_list";
 import MoreInfoForm from "../issue_management/contact_merchant";
 
@@ -22,19 +22,20 @@ const Mutual_fund_Service = () => {
         {/* Content */}
         <div className="relative h-full flex flex-col justify-between p-32 text-white">
           {/* Title */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
           <h1 className="text-4xl font-bold">Mutual Fund</h1>
         </div>
       </div>
-      <div className="bg-white min-h-screen flex items-center justify-center">
-        <div className="max-w-8xl mx-auto px-4 py-8 md:flex md:items-center md:space-x-8 md:-mt-96 md:mr-12">
-          <div className="md:w-2/2">
+
+      <div className="bg-white min-h-screen">
+        <div className="max-w-8xl mx-auto px-4 py-8 md:flex md:items-center md:space-x-8 md:-mt-60 md:mr-12">
+          {/* Left Side (Details) */}
+          <div className="md:w-2/3">
             <div className="bg-white p-8 md:p-32 lg:mt-32">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
                 <span className="text-blue-600 border-b-4 border-blue-900">
                   Mutual Fund
                 </span>
-              </h1>
+              </h2>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Sunlife Capital manages a mutual fund established through
                 collective investments deposited by participants under a
@@ -54,41 +55,43 @@ const Mutual_fund_Service = () => {
           </div>
 
           {/* Right Side (Services List) */}
-          <div className="md:w-3/4 mb-4 md:mb-0 lg:mt-52 lg:w-74 ">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">
-              Other Services
-            </h2>
-            <ul className="list-none space-y-1 space-x-1">
-              <li className="relative group mb-4 text-lg text-gray-700 border p-4 hover:text-white">
-                <span className="z-10 relative">Merchant Banking </span>
-                <span className="absolute left-0 bottom-0 h-full w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
-              </li>
-              <li className="relative group mb-4 text-lg text-gray-700 border p-4 hover:text-white">
-                <span className="z-10 relative">Portfolio Management Service </span>
-                <span className="absolute left-0 bottom-0 h-full w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
-              </li>
-              <li className="relative group mb-4 text-lg text-gray-700 border p-4 hover:text-white">
-                <span className="z-10 relative">Depository Participants</span>
-                <span className="absolute left-0 bottom-0 h-full w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
-              </li>
-              <li className="relative group mb-4 text-lg text-gray-700 border p-4 hover:text-white">
-                <span className="z-10 relative">Corporate Advisory</span>
-                <span className="absolute left-0 bottom-0 h-full w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
-              </li>
-              <li className="relative group mb-4 text-lg text-gray-700 border p-4 hover:text-white">
-                <span className="z-10 relative">Sunlife Specialized Investment Fund</span>
-                <span className="absolute left-0 bottom-0 h-full w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
-              </li>
-            </ul>
+          <div className="md:w-1/3">
+            <div className="bg-white p-8 md:p-12 lg:p-16 lg:mt-40">
+              <h2 className="text-3xl font-bold text-gray-800 mb-6">
+                Other Services
+              </h2>
+              <ul className="list-none space-y-4">
+                <li className="relative group mb-4 text-lg text-gray-700 border p-4 hover:text-white">
+                  <span className="z-10 relative">Merchant Banking </span>
+                  <span className="absolute left-0 bottom-0 h-full w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                </li>
+                <li className="relative group mb-4 text-lg text-gray-700 border p-4 hover:text-white">
+                  <span className="z-10 relative">Portfolio Management Service </span>
+                  <span className="absolute left-0 bottom-0 h-full w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                </li>
+                <li className="relative group mb-4 text-lg text-gray-700 border p-4 hover:text-white">
+                  <span className="z-10 relative">Depository Participants</span>
+                  <span className="absolute left-0 bottom-0 h-full w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                </li>
+                <li className="relative group mb-4 text-lg text-gray-700 border p-4 hover:text-white">
+                  <span className="z-10 relative">Corporate Advisory</span>
+                  <span className="absolute left-0 bottom-0 h-full w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                </li>
+                <li className="relative group mb-4 text-lg text-gray-700 border p-4 hover:text-white">
+                  <span className="z-10 relative">Sunlife Specialized Investment Fund</span>
+                  <span className="absolute left-0 bottom-0 h-full w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                </li>
+              </ul>
+            </div>
           </div>
-          
         </div>
-        
       </div>
-         {/* Additional Information */}
-         <div className="bg-gray-100 py-12 lg:-mt-60">
+
+      <div className="bg-gray-100 py-12 lg:-mt-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Objectives of Mutual Fund</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-6">
+            Objectives of Mutual Fund
+          </h2>
           <ul className="list-disc list-inside text-lg text-gray-700">
             <li>To design a collective investment scheme</li>
             <li>To create a highly transparent and regulated sector of investment</li>
@@ -100,7 +103,9 @@ const Mutual_fund_Service = () => {
             <li>To preserve and promote the wealth of investors through ethical, planned, disciplined, and sustainable investments</li>
           </ul>
 
-          <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-6">Closed-End Mutual Fund</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-6">
+            Closed-End Mutual Fund
+          </h2>
           <p className="text-lg text-gray-700 leading-relaxed">
             The mutual fund scheme has a stipulated maturity period with a subscription period opened for a specific period only. The investors can invest in the schemes through an initial public offering and later on the unit can be bought and sold through the stock exchange.
           </p>
@@ -112,7 +117,9 @@ const Mutual_fund_Service = () => {
             <li>Fund size is fixed with limited capitalization</li>
           </ul>
 
-          <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-6">Open-End Mutual Fund</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-6">
+            Open-End Mutual Fund
+          </h2>
           <p className="text-lg text-gray-700 leading-relaxed">
             The fund scheme is available for subscription on a daily basis based on their Net Assets Value (NAV). Such fund schemes have a fixed maturity period and the key feature of open-ended schemes is their high liquidity feature.
           </p>
@@ -123,7 +130,9 @@ const Mutual_fund_Service = () => {
             <li>Fund size is flexible with unlimited capitalization</li>
           </ul>
 
-          <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-6">Structure</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mt-8 mb-6">
+            Structure
+          </h2>
           <p className="text-lg text-gray-700 leading-relaxed">
             <strong>Fund Sponsor:</strong> 'SPONSOR' is any person who establishes a Mutual Fund, acting alone or in combination with another body corporate.
             <br />
@@ -135,13 +144,14 @@ const Mutual_fund_Service = () => {
           </p>
         </div>
       </div>
-      <div className="relative">
-            <FundList/>
-          </div>
-          <div className="relative mt-40">
-          <MoreInfoForm/>
-          </div>
-        
+
+      <div className="relative mt-0 lg:mt-2  ">
+        <FundList />
+      </div>
+
+      <div className="relative mt-0 lg:mt-60">
+        <MoreInfoForm />
+      </div>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import logo from "../../assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -7,6 +7,10 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next"
+import { selectLanguage } from "./views/layout/Redux/languageSlice";
+import { useSelector,useDispatch } from 'react-redux';  
+import i18n from "../../i18n";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +20,17 @@ const Navbar = () => {
     useState(null);
   const [nestedDropdownOpenDownload, setNestedDropdownOpenDownload] =
     useState(null);
+    const { t, i18n } = useTranslation();
+    const lang = useSelector(selectLanguage);
+    const dispatch = useDispatch();
 
+    useEffect(() => {
+      if (i18n.isInitialized) {
+        i18n.changeLanguage(lang);
+      }
+    }, [lang, i18n]);
+    
+   
   const toggleDropdown = (section) => {
     setDropdownOpen(dropdownOpen === section ? null : section);
     if (section !== "merchantBanking") {
@@ -60,7 +74,7 @@ const Navbar = () => {
                   className="text-white hover:bg-orange-600 px-3 py-2 rounded-md text-base font-medium"
                   to={"/"}
                 >
-                  Home
+                {lang === 'en' ? 'Home' : t('Homepage')}
                 </Link>
 
                 <div
@@ -69,7 +83,7 @@ const Navbar = () => {
                   onMouseLeave={() => toggleDropdown(null)}
                 >
                   <button className="text-white hover:bg-orange-600 px-3 py-2 rounded-md text-base font-medium flex items-center">
-                    About Us
+                    {t("AboutUs")}
                     <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
                   </button>
                   {dropdownOpen === "about" && (
@@ -102,7 +116,7 @@ const Navbar = () => {
                   onMouseLeave={() => toggleDropdown(null)}
                 >
                   <button className="text-white hover:bg-orange-600 px-3 py-2 rounded-md text-base font-medium flex items-center">
-                    Services
+                    {t("Services")}
                     <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
                   </button>
                   {dropdownOpen === "services" && (
@@ -239,7 +253,7 @@ const Navbar = () => {
                   onMouseLeave={() => toggleDropdown(null)}
                 >
                   <button className="text-white hover:bg-white-600 px-3 py-2 rounded-md text-base font-medium flex items-center  hover:bg-orange-600 hover:text-white">
-                    Information Center
+                    {t("Information Center")}
                     <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
                   </button>
                   {dropdownOpen === "information" && (
@@ -338,7 +352,7 @@ const Navbar = () => {
                   onMouseLeave={() => toggleDropdown(null)}
                 >
                   <button className="text-white hover:bg-orange-600 px-3 py-2  hover:bg-orange-600 hover:text-white rounded-md text-base font-medium flex items-center">
-                    Results
+                    {t("Results")}
                     <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
                   </button>
                   {dropdownOpen === "results" && (
@@ -376,7 +390,7 @@ const Navbar = () => {
                 >
 
                   <button  className="text-white hover:bg-orange-600 px-3 py-2  hover:bg-orange-600 hover:text-white rounded-md text-base font-medium flex items-center">
-                  Online Services
+                  {t("Online Services")}
                   <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
 
                   </button>
@@ -395,7 +409,7 @@ const Navbar = () => {
                   href="#"
                   className="text-white hover:bg-orange-600 px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Sunlife Kosh
+                  {t("Sunlife Kosh")}
                 </a>
                 
               </div>
@@ -406,7 +420,7 @@ const Navbar = () => {
                 >
 
                   <button  className="bg-white text-orange-500 px-4 py-2 rounded-md text-base font-medium hover:bg-orange-100">
-                  Login
+                  {t("Login")}
                   <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
 
                   </button>

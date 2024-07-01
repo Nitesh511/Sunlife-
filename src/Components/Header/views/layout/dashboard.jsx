@@ -4,9 +4,13 @@ import OurServices from "./services/services";
 import MutualFundChart from "./chart/chart";
 import PortfolioService from "./portfolio/portfolio";
 import AdvisoryService from "./portfolio/advisory_service";
-
+import Topnav from "../../topnav";
+import Navbar from "../../Navbar";
 const Dashboard = () => {
   return (
+    <>
+    <Topnav/>
+    <Navbar/>
     <div>
       <div className="w-full h-96 sm:h-96 md:h-2/5 lg:h-2/5 xl:h-2/5 flex justify-center items-center overflow-hidden">
         <img
@@ -24,6 +28,7 @@ const Dashboard = () => {
         <AdvisoryService />
       </div>
     </div>
+    </>
   );
 };
 

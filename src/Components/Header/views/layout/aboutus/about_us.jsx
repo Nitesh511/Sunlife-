@@ -2,9 +2,14 @@ import React from "react";
 import Company from "../../../../../assets/company.jpg";
 import aboutpng from "../../../../../assets/about.png"
 import CompanyInfo from "./company_info";
+import Topnav from "../../../topnav";
+import Navbar from "../../../Navbar";
 
 const CompanyProfileHeader = () => {
   return (
+    <>
+    <Topnav/>
+    <Navbar/>
     <div className="relative">
       {/* Main content */}
       <div className="relative h-96 bg-gray-300 overflow-hidden">
@@ -108,6 +113,7 @@ const CompanyProfileHeader = () => {
 </div>
 
     </div>
+    </>
   );
 };
 

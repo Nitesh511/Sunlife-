@@ -33,16 +33,17 @@ import RightsShareResult from "./rights_share/rights_share_result";
 import Rights_ShareResult from "./rights_share/rights_share_result";
 import PMSForm from "./pms_form/pms_fourm";
 import LoginForm from "./login/login_form";
+import { Provider } from 'react-redux';
+import store from "./Redux/store";
+
 
 
 
 function Index (){
   return (
+    <Provider store={store}>
    <BrowserRouter>
- 
    <Topnav/>
- 
-    
     <Navbar/>
     <Routes>
     <Route path="/" element={<Dashboard/>}></Route>
@@ -85,6 +86,7 @@ function Index (){
      
     <Footer/>
    </BrowserRouter>
+   </Provider>
 
   );
 };
