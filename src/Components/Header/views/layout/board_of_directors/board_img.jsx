@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import person1 from "../../.././../../assets/suresh_kumar.png";
 import { Card, Typography } from "@material-tailwind/react";
 import CloseIcon from '@mui/icons-material/Close';
+import Chairman from "../../../../../assets/chairman.png";
+import Director from "../../../../../assets/Director.png";
+import Director1 from "../../../../../assets/DIRECTOR-2.png";
+import Director2 from "../../../../../assets/Director-3.png";
+import CompanySecretory from "../../../../../assets/CompanySecretory.png";
 
 const ProfileCard = ({ name, title, imageSrc, age, description }) => {
   const [showModal, setShowModal] = useState(false);
@@ -16,7 +21,7 @@ const ProfileCard = ({ name, title, imageSrc, age, description }) => {
 
   return (
     <div className="relative group">
-      <Card className="bg-white p-4 m-2 overflow-hidden flex flex-col justify-center items-center cursor-pointer">
+      <Card className="bg-white p-4 m-2 overflow-hidden flex flex-col justify-center items-center cursor-pointer w-60 h-80 md:w-60 md:h-80">
         <img
           src={imageSrc}
           alt={name}
@@ -58,99 +63,85 @@ const OrgChart = () => (
       {/* Desktop view */}
       <div className="hidden md:block"> {/* Hide on mobile */}
         <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
-          <div className="flex justify-center">
+          <div className="flex justify-center ">
             <ProfileCard 
               name="Suresh Kumar Keyal" 
               title="Chairman" 
-              imageSrc={person1} 
+              imageSrc={Chairman} 
               age={50} 
               description="Suresh Kumar Keyal is the chairman of the company, with over 20 years of experience in the industry."
             />
           </div>
           <div className="grid grid-cols-3 justify-items-center">
             <ProfileCard 
-              name="Mr. Dipesh Anupam" 
+              name="Mr. Bikash Keyal" 
               title="Director" 
-              imageSrc={person1} 
+              imageSrc={Director} 
               age={45} 
               description="Dipesh Anupam is a director who has been a part of the board for 10 years."
             />
             <ProfileCard 
-              name="Mr. Hari Acharya" 
+              name="Mr. Raj Kumar Aryal" 
               title="Director" 
-              imageSrc={person1} 
+              imageSrc={Director1} 
               age={48} 
               description="Hari Acharya brings a wealth of knowledge and expertise to the board."
             />
             <ProfileCard 
-              name="Ms. Sandhya Atti" 
+              name="Ms. Nicky Sanghai " 
               title="Director" 
-              imageSrc={person1} 
+              imageSrc={Director2} 
               age={40} 
               description="Sandhya Atti is known for her strategic vision and leadership."
             />
           </div>
-          <div className="grid grid-cols-2 gap-4 justify-items-center">
+          <div className="grid grid-cols-1 gap-4 justify-items-center">
             <ProfileCard 
-              name="Dr. Ram Prakash Pokhrel" 
+              name="Mr. Bibek Kharel" 
               title="Director" 
-              imageSrc={person1} 
+              imageSrc={CompanySecretory} 
               age={55} 
               description="Dr. Ram Prakash Pokhrel is a distinguished director with a background in finance."
-            />
-            <ProfileCard 
-              name="Mr. Sushil Kumar Arun" 
-              title="Director" 
-              imageSrc={person1} 
-              age={52} 
-              description="Sushil Kumar Arun has been instrumental in driving the company's growth."
             />
           </div>
         </div>
       </div>
       {/* Mobile view */}
-      <div className="md:hidden grid grid-cols-1 gap-4">
+      <div className="md:hidden grid grid-cols-1 gap-4 relative ml-20">
         <ProfileCard 
           name="Suresh Kumar Keyal" 
           title="Chairman" 
-          imageSrc={person1} 
+          imageSrc={Chairman} 
           age={50} 
           description="Suresh Kumar Keyal is the chairman of the company, with over 20 years of experience in the industry."
         />
         <ProfileCard 
           name="Mr. Dipesh Anupam" 
           title="Director" 
-          imageSrc={person1} 
+          imageSrc={Director} 
           age={45} 
           description="Dipesh Anupam is a director who has been a part of the board for 10 years."
         />
         <ProfileCard 
           name="Mr. Hari Acharya" 
           title="Director" 
-          imageSrc={person1} 
+          imageSrc={Director1} 
           age={48} 
           description="Hari Acharya brings a wealth of knowledge and expertise to the board."
         />
         <ProfileCard 
           name="Ms. Sandhya Atti" 
           title="Director" 
-          imageSrc={person1} 
+          imageSrc={Director2} 
           age={40} 
           description="Sandhya Atti is known for her strategic vision and leadership."
         />
         <ProfileCard 
           name="Dr. Ram Prakash Pokhrel" 
           title="Director" 
-          imageSrc={person1} 
+          imageSrc={CompanySecretory} 
           age={55} 
           description="Dr. Ram Prakash Pokhrel is a distinguished director with a background in finance."
-        />
-        <ProfileCard 
-          name="Mr. Sushil Kumar Arun" 
-          title="Director" 
-          imageSrc={person1} 
-          age={52} 
-          description="Sushil Kumar Arun has been instrumental in driving the company's growth."
         />
       </div>
     </div>

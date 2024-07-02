@@ -1,15 +1,15 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from "@mui/icons-material/Menu";
 import {
   faChevronDown,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next"
+import { useTranslation } from "react-i18next";
 import { selectLanguage } from "./views/layout/Redux/languageSlice";
-import { useSelector,useDispatch } from 'react-redux';  
+import { useSelector, useDispatch } from "react-redux";
 import i18n from "../../i18n";
 
 const Navbar = () => {
@@ -20,17 +20,16 @@ const Navbar = () => {
     useState(null);
   const [nestedDropdownOpenDownload, setNestedDropdownOpenDownload] =
     useState(null);
-    const { t, i18n } = useTranslation();
-    const lang = useSelector(selectLanguage);
-    const dispatch = useDispatch();
+  const { t, i18n } = useTranslation();
+  const lang = useSelector(selectLanguage);
+  const dispatch = useDispatch();
 
-    useEffect(() => {
-      if (i18n.isInitialized) {
-        i18n.changeLanguage(lang);
-      }
-    }, [lang, i18n]);
-    
-   
+  useEffect(() => {
+    if (i18n.isInitialized) {
+      i18n.changeLanguage(lang);
+    }
+  }, [lang, i18n]);
+
   const toggleDropdown = (section) => {
     setDropdownOpen(dropdownOpen === section ? null : section);
     if (section !== "merchantBanking") {
@@ -51,22 +50,23 @@ const Navbar = () => {
       setNestedDropdownOpenMutual(
         nestedDropdownOpenMutual === section ? null : section
       );
-    } else if(section==="download"){
+    } else if (section === "download") {
       setNestedDropdownOpenDownload(
         nestedDropdownOpenDownload === section ? null : section
       );
-
     }
   };
 
   return (
     <>
       <div className="">
-        <nav className="bg-gradient-to-b from-blue-600 to-red-500 text-white w-full fixed top-12 z-20">
+        <nav className="bg-gradient-to-b from-blue-600 to-red-500 text-white w-full fixed top-12 z-20 mt-0 lg:mt-0 mt-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
               <div className="flex items-center">
-                <Link to={"/"}><img src={logo} alt="LS Capital" className="h-20 w-20 mr-3" /></Link>
+                <Link to={"/"}>
+                  <img src={logo} alt="LS Capital" className="h-20 w-20 mr-3" />
+                </Link>
               </div>
 
               <div className="hidden lg:flex space-x-4">
@@ -74,7 +74,7 @@ const Navbar = () => {
                   className="text-white hover:bg-orange-600 px-3 py-2 rounded-md text-base font-medium"
                   to={"/"}
                 >
-                {lang === 'en' ? 'Home' : t('Homepage')}
+                  {lang === "en" ? "Home" : t("Homepage")}
                 </Link>
 
                 <div
@@ -92,19 +92,19 @@ const Navbar = () => {
                         className="block px-5 py-2 text-black hover:bg-orange-600 hover:text-white"
                         to={"/company_profile"}
                       >
-                        Company Profile
+                        {t("Company Profile")}
                       </Link>
                       <Link
                         className="block px-5 py-2 text-black  hover:bg-orange-600 hover:text-white"
                         to={"/board_directors"}
                       >
-                        Board of Directors
+                        {t("Board")}
                       </Link>
                       <Link
                         className="block px-5 py-2 text-black  hover:bg-orange-600 hover:text-white"
                         to={"/management_team"}
                       >
-                        Management Team
+                        {t("Management")}
                       </Link>
                     </div>
                   )}
@@ -132,7 +132,7 @@ const Navbar = () => {
                           className="block px-4 py-2 text-black flex justify-between items-center  hover:bg-orange-600 hover:text-white"
                           to={"/services/merchant_banking"}
                         >
-                          Merchant Banking
+                          {t("Merchant")}
                           <FontAwesomeIcon icon={faChevronRight} />
                         </Link>
                         {nestedDropdownOpen === "merchantBanking" && (
@@ -141,25 +141,25 @@ const Navbar = () => {
                               className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
                               to={"/services/issue_management"}
                             >
-                              Issue Management
+                              {t("Issue")}
                             </Link>
                             <Link
                               className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
                               to={"/services/registrar"}
                             >
-                              Registrar To Share
+                              {t("Register")}
                             </Link>
                             <Link
                               className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
                               to={"/services/advisory_service"}
                             >
-                              Advisory Service
+                              {t("Advisory")}
                             </Link>
                             <Link
                               className="block px-4 py-2 text-black hover:bg-orange-600 hover:text-white"
                               to={"/services/underwriting_service"}
                             >
-                              Underwriting shares
+                              {t("Underwriting")}
                             </Link>
                           </div>
                         )}
@@ -173,7 +173,7 @@ const Navbar = () => {
                           className="block px-4 py-2 text-black flex justify-between items-center  hover:bg-orange-600 hover:text-white"
                           to={"/services/mutual_fund_service"}
                         >
-                          Mutual Fund
+                          {t("Mutual Fund")}
                           <FontAwesomeIcon icon={faChevronRight} />
                         </Link>
                         {nestedDropdownOpenMutual === "mutualfund" && (
@@ -184,7 +184,7 @@ const Navbar = () => {
                                 "/services/mutual_fund_service/sunlife_first_mutal"
                               }
                             >
-                              Sunlife First Mutal Fund
+                              {t("Sunlife First")}
                             </Link>
                             <Link
                               className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
@@ -217,31 +217,31 @@ const Navbar = () => {
                         className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
                         to={"/services/portfolio_management"}
                       >
-                        Portfolio Management Service
+                        {t("Portfolio")}
                       </Link>
                       <Link
                         className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
                         to={"/services/depository_service"}
                       >
-                        Depository Participants
+                        {t("Depository")}
                       </Link>
                       <Link
                         className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
                         to={"/services/specalized_investment"}
                       >
-                        Specialized Investment Fund
+                        {t("Specialized")}
                       </Link>
                       <Link
                         className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
                         to={"/services/cooperate_advisory"}
                       >
-                        Corporate Advisory Service
+                        {t("Corporate")}
                       </Link>
                       <Link
                         className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
                         to={"/services/our_services"}
                       >
-                        View All
+                        {t("View All")}
                       </Link>
                     </div>
                   )}
@@ -253,94 +253,100 @@ const Navbar = () => {
                   onMouseLeave={() => toggleDropdown(null)}
                 >
                   <button className="text-white hover:bg-white-600 px-3 py-2 rounded-md text-base font-medium flex items-center  hover:bg-orange-600 hover:text-white">
-                    {t("Information Center")}
+                    {t("Information")}
                     <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
                   </button>
                   {dropdownOpen === "information" && (
                     <div className="absolute bg-white mt-0 rounded-md shadow-lg w-60">
-            
-                    <div
+                      <div
                         className="relative"
-                        onMouseEnter={() =>
-                          toggleNestedDropdown("download")
-                        }
+                        onMouseEnter={() => toggleNestedDropdown("download")}
                         onMouseLeave={() => toggleNestedDropdown(null)}
                       >
-                      <Link
-                        className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white flex justify-between items-center"
-                        to={"/downloads"}
-                      >
-                        Downloads
-                        <FontAwesomeIcon icon={faChevronRight} />
-                      </Link>
-                      {nestedDropdownOpenDownload === "download" && (
+                        <Link
+                          className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white flex justify-between items-center"
+                          to={"/downloads"}
+                        >
+                          {t("Downloads")}
+                          <FontAwesomeIcon icon={faChevronRight} />
+                        </Link>
+                        {nestedDropdownOpenDownload === "download" && (
                           <div className="absolute top-0 left-full bg-white rounded-md shadow-lg w-60">
                             <Link
                               className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
                               to={"/downloads/depository_participants"}
                             >
-                             Depository Participant Related 
+                              {t("Depository Participant")}
                             </Link>
                             <Link
                               className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
                               to={"/services/registrar"}
                             >
-                              PMS Related 
+                              {t("PMS")}
                             </Link>
                             <Link
                               className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
                               to={"/services/advisory_service"}
                             >
-                              Events
+                              {lang === "en" ? "Events" : t("Events")}
                             </Link>
                             <Link
                               className="block px-4 py-2 text-black hover:bg-orange-600 hover:text-white"
                               to={"/services/underwriting_service"}
                             >
-                              Notices
+                              {t("Notices")}
                             </Link>
                             <Link
                               className="block px-4 py-2 text-black hover:bg-orange-600 hover:text-white"
                               to={"/services/underwriting_service"}
                             >
-                              Prospectus
+                              {t("Prospectus")}
                             </Link>
                             <Link
                               className="block px-4 py-2 text-black hover:bg-orange-600 hover:text-white"
                               to={"/services/underwriting_service"}
                             >
-                              Demat Related
+                              {t("Demat Related")}
                             </Link>
                           </div>
-                        
                         )}
-                        </div>
+                      </div>
 
-                      <Link className="block px-4 py-2 text-black   hover:bg-orange-600 hover:text-white" to={"/downloads/reports"}
+                      <Link
+                        className="block px-4 py-2 text-black   hover:bg-orange-600 hover:text-white"
+                        to={"/downloads/reports"}
                       >
-                        Reports
+                        {t("Reports")}
                       </Link>
-                      <Link className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white" to={"/downloads/news"}
+                      <Link
+                        className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
+                        to={"/downloads/news"}
                       >
-                        News
+                        {t("News")}
                       </Link>
-                      <Link className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white" to={"/downloads/notice_updates"}
+                      <Link
+                        className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
+                        to={"/downloads/notice_updates"}
                       >
-                        Notices
+                        {t("Notices")}
                       </Link>
-                      <Link className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white" to={"/downloads/faq"}
+                      <Link
+                        className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
+                        to={"/downloads/faq"}
                       >
-                        FAQ
+                        {t("FAQ")}
                       </Link>
                       <a
                         href="#"
                         className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
                       >
-                        Insights
+                        {t("Insights")}
                       </a>
-                      <Link className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white" to={"/downloads/gallery"}
+                      <Link
+                        className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
+                        to={"/downloads/gallery"}
                       >
-                        Gallery
+                        {t("Gallery")}
                       </Link>
                     </div>
                   )}
@@ -357,51 +363,51 @@ const Navbar = () => {
                   </button>
                   {dropdownOpen === "results" && (
                     <div className="absolute bg-white mt-0 rounded-md shadow-lg w-60">
-                      <Link className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white" to={"/results/ipo_results"}
+                      <Link
+                        className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
+                        to={"/results/ipo_results"}
                       >
-                        IPO Result
+                        {t("IPO Result")}
                       </Link>
-                      <Link  
-                        className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"to={"/results/rights_share_results"}
+                      <Link
+                        className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
+                        to={"/results/rights_share_results"}
                       >
-                        Right Share Eligibility
+                        {t("Right Share Eligibility")}
                       </Link>
                       <a
                         href="#"
                         className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
                       >
-                        Tax Liability Check
+                        {t("Tax Liability Check")}
                       </a>
                       <a
                         href="#"
                         className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
                       >
-                        Right Share Allotment Result
+                        {t("RightShare")}
                       </a>
                     </div>
                   )}
                 </div>
-
 
                 <div
                   className="relative"
                   onMouseEnter={() => toggleDropdown("online")}
                   onMouseLeave={() => toggleDropdown(null)}
                 >
-
-                  <button  className="text-white hover:bg-orange-600 px-3 py-2  hover:bg-orange-600 hover:text-white rounded-md text-base font-medium flex items-center">
-                  {t("Online Services")}
-                  <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
-
+                  <button className="text-white hover:bg-orange-600 px-3 py-2  hover:bg-orange-600 hover:text-white rounded-md text-base font-medium flex items-center">
+                    {t("Online Services")}
+                    <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
                   </button>
                   {dropdownOpen === "online" && (
                     <div className="absolute bg-white mt-0 rounded-md shadow-lg w-60">
-                      <Link className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white" to={"/online_service/pms_form"}
+                      <Link
+                        className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
+                        to={"/online_service/pms_form"}
                       >
-                       PMS Form
+                        {t("PMS Form")}
                       </Link>
-                      
-                   
                     </div>
                   )}
                 </div>
@@ -411,41 +417,40 @@ const Navbar = () => {
                 >
                   {t("Sunlife Kosh")}
                 </a>
-                
               </div>
               <div
-                  className="relative"
-                  onMouseEnter={() => toggleDropdown("login")}
-                  onMouseLeave={() => toggleDropdown(null)}
-                >
-
-                  <button  className="bg-white text-orange-500 px-4 py-2 rounded-md text-base font-medium hover:bg-orange-100">
+                className="relative"
+                onMouseEnter={() => toggleDropdown("login")}
+                onMouseLeave={() => toggleDropdown(null)}
+              >
+                <button className="bg-white text-orange-500 px-4 py-2 rounded-md text-base font-medium hover:bg-orange-100">
                   {t("Login")}
                   <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
-
-                  </button>
-                  {dropdownOpen === "login" && (
-                    <div className="absolute bg-white mt-0 rounded-md shadow-lg w-32  ">
-                      <Link className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white" to={"/login"}
-                      >
-                       PMS Login
-                      </Link>
-                      <a className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white" href="https://meroshare.cdsc.com.np/#/login" 
-                      >
-                      MeroShare Login
-                      </a>
-                      
-                   
-                    </div>
-                  )}
-                </div>
+                </button>
+                {dropdownOpen === "login" && (
+                  <div className="absolute bg-white mt-0 rounded-md shadow-lg w-32  ">
+                    <Link
+                      className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
+                      to={"/login"}
+                    >
+                      {t("PMS Login")}
+                    </Link>
+                    <a
+                      className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
+                      href="https://meroshare.cdsc.com.np/#/login"
+                    >
+                      {t("MeroShare Login")}
+                    </a>
+                  </div>
+                )}
+              </div>
 
               <div className="flex items-center absolute ml-56">
                 <button
                   className="lg:hidden lg:ml-4 sm:mr-12 text-white"
                   onClick={() => setIsOpen(!isOpen)}
                 >
-                  <MenuIcon/> 
+                  <MenuIcon />
                 </button>
               </div>
             </div>
@@ -476,22 +481,22 @@ const Navbar = () => {
                       to={"/company_profile"}
                       onClick={() => setIsOpen(!isOpen)}
                     >
-                      Company Profile
+                      {t("Company Profile")}
                     </Link>
                     <Link
                       className="block px-5 py-2 text-black"
                       to={"board_directors"}
                       onClick={() => setIsOpen(!isOpen)}
                     >
-                      Board of Directors
+                      {t("Board")}
                     </Link>
                     <Link
                       href="#"
                       className="block px-5 py-2 text-black"
-                      to={"/management_team"} 
+                      to={"/management_team"}
                       onClick={() => setIsOpen(!isOpen)}
                     >
-                      Management Team
+                      {t("Management")}
                     </Link>
                   </div>
                 )}
@@ -509,9 +514,11 @@ const Navbar = () => {
                       onClick={() => toggleNestedDropdown("merchantBanking")}
                       className="block px-4 py-2 text-black w-full text-left flex justify-between items-center"
                     >
-                      <Link to={"/services/merchant_banking"}
-                       onClick={() => setIsOpen(!isOpen)}>
-                        Merchant Banking
+                      <Link
+                        to={"/services/merchant_banking"}
+                        onClick={() => setIsOpen(!isOpen)}
+                      >
+                        {t("Merchant")}
                       </Link>
                       <FontAwesomeIcon icon={faChevronRight} />
                     </button>
@@ -522,7 +529,7 @@ const Navbar = () => {
                           to={"/services/issue_management"}
                           onClick={() => setIsOpen(!isOpen)}
                         >
-                          Issue Management
+                          {t("Issue")}
                         </Link>
                         <Link
                           className="block px-4 py-2 text-black"
@@ -532,7 +539,6 @@ const Navbar = () => {
                           Registrar To Share
                         </Link>
                         <Link
-                 
                           className="block px-4 py-2 text-black"
                           to={"/services/advisory_service"}
                           onClick={() => setIsOpen(!isOpen)}
@@ -544,7 +550,7 @@ const Navbar = () => {
                           to={"/services/underwriting_service"}
                           onClick={() => setIsOpen(!isOpen)}
                         >
-                          Underwriting shares
+                          {t("Underwriting")}
                         </Link>
                       </div>
                     )}
@@ -552,9 +558,11 @@ const Navbar = () => {
                       onClick={() => toggleNestedDropdown("mutualfund")}
                       className="block px-4 py-2 text-black w-full text-left flex justify-between items-center"
                     >
-                      <Link to={"/services/mutual_fund_service"}
-                       onClick={() => setIsOpen(!isOpen)}>
-                        Mutual Fund
+                      <Link
+                        to={"/services/mutual_fund_service"}
+                        onClick={() => setIsOpen(!isOpen)}
+                      >
+                        {t("Mutual Fund")}
                       </Link>
                       <FontAwesomeIcon icon={faChevronRight} />
                     </button>
@@ -566,7 +574,7 @@ const Navbar = () => {
                             "/services/mutual_fund_service/sunlife_first_mutal"
                           }
                         >
-                          Sunlife First Mutal Fund
+                          {t("Sunlife First")}
                         </Link>
                         <a href="#" className="block px-4 py-2 text-black">
                           Sunlife Second Mutal Fund
@@ -584,35 +592,35 @@ const Navbar = () => {
                       to={"/services/portfolio_management"}
                       onClick={() => setIsOpen(!isOpen)}
                     >
-                      Portfolio Management Service
+                      {t("Portfolio")}
                     </Link>
                     <Link
                       className="block px-4 py-2 text-black"
                       to={"/services/depository_service"}
                       onClick={() => setIsOpen(!isOpen)}
                     >
-                      Depository Participants
+                      {t("Depository")}
                     </Link>
                     <Link
                       className="block px-4 py-2 text-black"
                       to={"/services/specalized_investment"}
                       onClick={() => setIsOpen(!isOpen)}
                     >
-                      Specialized Investment Fund
+                      {t("Specialized")}
                     </Link>
                     <Link
                       className="block px-4 py-2 text-black"
                       to={"/services/cooperate_advisory"}
                       onClick={() => setIsOpen(!isOpen)}
                     >
-                      Corporate Advisory Service
+                      {t("Corporate")}
                     </Link>
                     <Link
                       className="block px-4 py-2 text-black"
                       to={"/services/our_services"}
                       onClick={() => setIsOpen(!isOpen)}
                     >
-                      View All
+                      {t("View All")}
                     </Link>
                   </div>
                 )}
@@ -621,36 +629,38 @@ const Navbar = () => {
                   onClick={() => toggleDropdown("information")}
                   className="text-white hover:bg-orange-600 block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Information Center
+                  {t("Information")}
                   <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
                 </button>
                 {dropdownOpen === "information" && (
                   <div className="relative bg-white mt-2 rounded-md shadow-lg w-60 overflow-y-auto max-h-60">
-
-                   <button
+                    <button
                       onClick={() => toggleNestedDropdown("download")}
                       className="block px-4 py-2 text-black w-full text-left flex justify-between items-center"
                     >
-                      <Link to={"/downloads"}  onClick={() => setIsOpen(!isOpen)}>
-                        Downloads
+                      <Link
+                        to={"/downloads"}
+                        onClick={() => setIsOpen(!isOpen)}
+                      >
+                        {t("Downloads")}
                       </Link>
                       <FontAwesomeIcon icon={faChevronRight} />
-                      </button>
-                      {nestedDropdownOpenDownload === "download" && (
+                    </button>
+                    {nestedDropdownOpenDownload === "download" && (
                       <div className="relative bg-white mt-2 rounded-md shadow-lg w-60 overflow-y-auto max-h-60">
                         <Link
                           className="block px-4 py-2 text-black"
                           to={"/downloads/depository_participants"}
                           onClick={() => setIsOpen(!isOpen)}
                         >
-                          Depository Participants
+                          {t("Depository")}
                         </Link>
                         <Link
                           className="block px-4 py-2 text-black"
                           to={"/services/registrar"}
                           onClick={() => setIsOpen(!isOpen)}
                         >
-                          Registrar To Share
+                          {t("Registrar")}
                         </Link>
                         <Link
                           href="#"
@@ -658,35 +668,55 @@ const Navbar = () => {
                           to={"/services/advisory_service"}
                           onClick={() => setIsOpen(!isOpen)}
                         >
-                          Advisory Service
+                          {t("Advisory")}
                         </Link>
                         <Link
                           className="block px-4 py-2 text-black"
                           to={"/services/underwriting_service"}
                           onClick={() => setIsOpen(!isOpen)}
                         >
-                          Underwriting shares
+                          {t("Underwriting")}
                         </Link>
                       </div>
                     )}
-                
-                    <Link className="block px-4 py-2 text-black" to={"/downloads/reports"}  onClick={() => setIsOpen(!isOpen)}>
-                      Reports
+
+                    <Link
+                      className="block px-4 py-2 text-black"
+                      to={"/downloads/reports"}
+                      onClick={() => setIsOpen(!isOpen)}
+                    >
+                      {t("Reports")}
                     </Link>
-                    <Link className="block px-4 py-2 text-black" to={"/downloads/news"}  onClick={() => setIsOpen(!isOpen)}>
-                      News
+                    <Link
+                      className="block px-4 py-2 text-black"
+                      to={"/downloads/news"}
+                      onClick={() => setIsOpen(!isOpen)}
+                    >
+                      {t("News")}
                     </Link>
-                    <Link className="block px-4 py-2 text-black" to={"/downloads/notice_updates"}  onClick={() => setIsOpen(!isOpen)}>
+                    <Link
+                      className="block px-4 py-2 text-black"
+                      to={"/downloads/notice_updates"}
+                      onClick={() => setIsOpen(!isOpen)}
+                    >
                       Notices
                     </Link>
-                    <Link className="block px-4 py-2 text-black" to={"/downloads/faq"}  onClick={() => setIsOpen(!isOpen)}>
-                      FAQ
+                    <Link
+                      className="block px-4 py-2 text-black"
+                      to={"/downloads/faq"}
+                      onClick={() => setIsOpen(!isOpen)}
+                    >
+                      {t("FAQ")}
                     </Link>
                     <a href="#" className="block px-4 py-2 text-black">
-                      Insights
+                      {t("Insights")}
                     </a>
-                    <Link className="block px-4 py-2 text-black" to={"/downloads/gallery"}  onClick={() => setIsOpen(!isOpen)}>
-                      Gallery
+                    <Link
+                      className="block px-4 py-2 text-black"
+                      to={"/downloads/gallery"}
+                      onClick={() => setIsOpen(!isOpen)}
+                    >
+                      {t("Gallery")}
                     </Link>
                   </div>
                 )}
@@ -695,49 +725,58 @@ const Navbar = () => {
                   onClick={() => toggleDropdown("results")}
                   className="text-white hover:bg-orange-600 block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Results
+                  {t("Results")}
                   <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
                 </button>
                 {dropdownOpen === "results" && (
                   <div className="relative bg-white mt-2 rounded-md shadow-lg w-60 overflow-y-auto max-h-60">
-                    <Link className="block px-4 py-2 text-black" to={"/results/ipo_results"}  onClick={() => setIsOpen(!isOpen)}>
-                      IPO Result
+                    <Link
+                      className="block px-4 py-2 text-black"
+                      to={"/results/ipo_results"}
+                      onClick={() => setIsOpen(!isOpen)}
+                    >
+                      {t("IPO Result")}
                     </Link>
-                    <Link className="block px-4 py-2 text-black" to={"/results/rights_share_results"}  onClick={() => setIsOpen(!isOpen)}>
-                      Right Share Eligibility
+                    <Link
+                      className="block px-4 py-2 text-black"
+                      to={"/results/rights_share_results"}
+                      onClick={() => setIsOpen(!isOpen)}
+                    >
+                      {t("Right Share Eligibility")}
                     </Link>
                     <a href="#" className="block px-4 py-2 text-black">
-                      Tax Liability Check
+                      {t("Tax Liability Check")}
                     </a>
                     <a href="#" className="block px-4 py-2 text-black">
-                      Right Share Allotment Result
+                      {t("RightShare")}
                     </a>
                   </div>
                 )}
 
-                
                 <button
                   onClick={() => toggleDropdown("online")}
                   className="text-white hover:bg-orange-600 block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Online Services
+                  {t("Online Services")}
                   <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
                 </button>
                 {dropdownOpen === "online" && (
                   <div className="relative bg-white mt-2 rounded-md shadow-lg w-60 overflow-y-auto max-h-60">
-                    <Link className="block px-4 py-2 text-black" to={"/online_service/pms_form"}  onClick={() => setIsOpen(!isOpen)}>
-                      PMS Form
+                    <Link
+                      className="block px-4 py-2 text-black"
+                      to={"/online_service/pms_form"}
+                      onClick={() => setIsOpen(!isOpen)}
+                    >
+                        {t("PMS Form")}
                     </Link>
-                   
                   </div>
                 )}
 
-               
                 <a
                   href="#"
                   className="text-white hover:bg-orange-600 block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Sunlife Kosh
+                  {t("Sunlife Kosh")}
                 </a>
               </div>
             </div>

@@ -46,14 +46,14 @@ const PMSForm = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-blue-600 to-red-500 p-8 max-w-2xl mx-auto mt-40 mb-14">
-      <h2 className="text-white text-2xl mb-6">PMS Form Online Form</h2>
+    <div className="bg-gradient-to-b from-blue-600 to-red-500 p-8 max-w-2xl mx-auto  mt-0 mb-14">
+      <h2 className="text-white text-2xl mb-0 mt-28">PMS Form Online Form</h2>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={onSubmit}
       >
-        <Form className="space-y-6">
+        <Form className="space-y-6 mt-0">
           <div className="flex flex-wrap -mx-3">
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <Field name="firstName" className="w-full p-3 border border-blue-300" placeholder="First Name" />
