@@ -44,12 +44,19 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      <div data-aos="flip-left">
       <OurServices />
-      <MutualFundChart />
-      <div className="relative -mt-2">
+      </div>
+     
+     <div data-aos="flip-up">
+     <MutualFundChart />
+
+     </div>
+    
+      <div className="relative -mt-2  " data-aos="slide-left">
         <PortfolioService />
       </div>
-      <div className="relative lg:-mt-52 -mt-24">
+      <div className="relative lg:-mt-52 -mt-24" data-aos="slide-right">
         <AdvisoryService />
       </div>
       
