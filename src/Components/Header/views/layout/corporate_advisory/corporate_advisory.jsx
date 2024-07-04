@@ -16,12 +16,11 @@ const Corporate_advisory = () => {
           }}
         ></div>
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+    
 
         {/* Content */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white p-8 md:p-0">
+        <div className="absolute inset-0 flex items-center justify-center py-20">
+          <div className="text-center text-white p-8 mt-24  ">
             <h1 className="text-4xl font-bold">Corporate Advisory Services</h1>
           </div>
         </div>

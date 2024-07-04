@@ -22,7 +22,7 @@ const Registrar = () => {
         <div className="relative h-full flex flex-col justify-between p-32 text-white">
           {/* Title */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
-          <h1 className="text-4xl font-bold">Registrar To Share</h1>
+          <h1 className="text-4xl font-bold py-20">Registrar To Share</h1>
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

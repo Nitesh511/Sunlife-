@@ -20,7 +20,7 @@ const Portfollio_Service = () => {
 
         {/* Content */}
         <div className="relative h-full flex flex-col justify-between p-32 text-white ">
-          <h1 className="text-4xl font-bold">Portfolio Management Service</h1>
+          <h1 className="text-4xl font-bold py-20">Portfolio Management Service</h1>
         </div>
       </div>
 

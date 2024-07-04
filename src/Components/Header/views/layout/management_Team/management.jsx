@@ -22,7 +22,7 @@ const ManagementTeam = () => {
         {/* Content */}
         <div className="relative h-full flex flex-col justify-between p-32 text-white">
           {/* Title */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="max-w-7xl mx-auto px-4 py-10 ml:0 lg:px-8"></div>
           <h1 className="text-4xl font-bold">Management Team</h1>
         </div>
       </div>

@@ -22,7 +22,7 @@ const Merchant = () => {
         {/* Content */}
         <div className="relative h-full flex flex-col justify-between p-32 text-white">
           {/* Title */}
-          <h1 className="text-4xl font-bold">Merchant Banking</h1>
+          <h1 className="text-4xl font-bold py-20">Merchant Banking</h1>
         </div>
       </div>
 
