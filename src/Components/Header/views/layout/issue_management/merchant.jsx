@@ -22,7 +22,11 @@ const Merchant = () => {
         {/* Content */}
         <div className="relative h-full flex flex-col justify-between p-32 text-white">
           {/* Title */}
-          <h1 className="text-4xl font-bold py-20">Merchant Banking</h1>
+          <div className="absolute inset-0 flex items-center justify-center py-20">
+          <div className="text-center text-white p-8 mt-24  ">
+            <h1 className="text-4xl font-bold">Merchant Banking</h1>
+          </div>
+        </div>
         </div>
       </div>
 
@@ -85,7 +89,7 @@ const Merchant = () => {
         </div>
       </div>
 
-      <div className="relative mt-0 lg:mt-60">
+      <div className="relative mt-0 ">
         <MoreInfoForm />
       </div>
     </div>

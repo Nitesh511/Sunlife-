@@ -21,7 +21,12 @@ const Specalized_investment = () => {
         {/* Content */}
         <div className="relative h-full flex flex-col justify-between p-32 text-white">
           {/* Title */}
-          <h1 className="text-4xl font-bold py-20">Sunlife Specialized Investment Fund</h1>
+          <div className="absolute inset-0 flex items-center justify-center py-20">
+          <div className="text-center text-white p-8 mt-24  ">
+            <h1 className="text-4xl font-bold">Sunlife Specialized Investment Fund</h1>
+          </div>
+        </div>
+
         </div>
       </div>
 
@@ -91,7 +96,7 @@ const Specalized_investment = () => {
         </div>
       </div>
 
-      <div className="relative mt-40">
+      <div className="relative mt-40 lg:mt-0">
         <MoreInfoForm />
       </div>
     </div>

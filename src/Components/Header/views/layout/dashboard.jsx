@@ -6,6 +6,7 @@ import MutualFundChart from "./chart/chart";
 import PortfolioService from "./portfolio/portfolio";
 import AdvisoryService from "./portfolio/advisory_service";
 import mother1 from "../../../../assets/mother1.jpg";
+import mothersecond from "../../../../assets/mothersecond.png"
 import { useSelector, useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { selectLanguage } from "./Redux/languageSlice";
@@ -37,7 +38,7 @@ const Dashboard = () => {
         <div className="md:w-1/2 bg-none">
           <div className="rounded-lg shadow-lg overflow-hidden h-full">
             <img
-              src={mother1}
+              src={mothersecond}
               alt="Company representation"
               className="object-cover w-full h-full"
             />

@@ -20,8 +20,11 @@ const News_part = () => {
         {/* Content */}
         <div className="relative h-full flex flex-col justify-between p-32 text-white">
           {/* Title */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
-          <h1 className="text-4xl font-bold">Merchant Banking</h1>
+          <div className="absolute inset-0 flex items-center justify-center py-20">
+          <div className="text-center text-white p-8 mt-24  ">
+            <h1 className="text-4xl font-bold">News</h1>
+          </div>
+        </div>
         </div>
       </div>
       <h1 className='relative text-5xl text-center'>Latest News&Updates</h1>

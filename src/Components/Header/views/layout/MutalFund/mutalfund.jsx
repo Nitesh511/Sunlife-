@@ -22,7 +22,11 @@ const Mutual_fund_Service = () => {
         {/* Content */}
         <div className="relative h-full flex flex-col justify-between p-32 text-white">
           {/* Title */}
-          <h1 className="text-4xl font-bold">Mutual Fund</h1>
+          <div className="absolute inset-0 flex items-center justify-center py-20">
+          <div className="text-center text-white p-8 mt-24  ">
+            <h1 className="text-4xl font-bold"> Mutual Fund</h1>
+          </div>
+        </div>
         </div>
       </div>
 
@@ -149,7 +153,7 @@ const Mutual_fund_Service = () => {
         <FundList />
       </div>
 
-      <div className="relative mt-0 lg:mt-60">
+      <div className="relative mt-0 lg:mt-0">
         <MoreInfoForm />
       </div>
     </div>

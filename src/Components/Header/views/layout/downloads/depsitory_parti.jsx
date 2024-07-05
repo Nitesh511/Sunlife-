@@ -76,9 +76,11 @@ const DownloadDepository = () => {
         {/* Content */}
         <div className="relative h-full flex flex-col justify-between p-8 lg:p-32 text-white">
           {/* Title */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:mt-32 lg:ml-72">
+          <div className="absolute inset-0 flex items-center justify-center py-20">
+          <div className="text-center text-white p-8 mt-24  ">
             <h1 className="text-4xl font-bold">Downloads</h1>
           </div>
+        </div>
         </div>
       </div>
       

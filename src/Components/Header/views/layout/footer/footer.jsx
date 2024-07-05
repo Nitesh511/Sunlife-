@@ -1,4 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import XIcon from '@mui/icons-material/X';
 
 const Footer = () => {
   return (
@@ -22,52 +26,44 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-2">Quick Links</h3>
             <ul className="text-lg space-y-4">
-              <li><a href="/">Downloads</a></li>
-              <li><a href="/">News</a></li>
-              <li><a href="/">Notice</a></li>
+              <li><Link to={"/downloads"} href="">Downloads</Link></li>
+              <li><Link  to={"/downloads/news"}>News</Link></li>
+              <li><Link to={"/downloads/notice_updates"}>Notice</Link></li>
               <li><a href="/">Career</a></li>
-              <li><a href="/">Contact</a></li>
+              <li><Link to={"/contact_form"}>Contact</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="font-bold mb-2 text-lg">Important Links</h3>
             <ul className="text-lg space-y-4">
-              <li><a href="/">Securities Board of Nepal</a></li>
-              <li><a href="/">Nepal Stock Exchange</a></li>
-              <li><a href="/">CDS and Clearing Ltd.</a></li>
-              <li><a href="/">Merchant Banking Association</a></li>
+              <li><a href="https://www.sebon.gov.np/about-sebon">Securities Board of Nepal</a></li>
+              <li><a href="https://merolagani.com/LatestMarket.aspx">Nepal Stock Exchange</a></li>
+              <li><a href="https://cdsc.com.np/">CDS and Clearing Ltd.</a></li>
+              <li><a href="https://mban.com.np/">Merchant Banking Association</a></li>
             </ul>
           </div>
           <div>
-            <h3 className="font-bold mb-2 text-lg">Useful Links</h3>
+            <h3 className="font-bold mb-2 text-lg">Quick Links</h3>
             <ul className="text-lg space-y-4">
-              <li><a href="/">Laxmi Sunrise Bank</a></li>
-              <li><a href="/">Nepal Rastra Bank</a></li>
-              <li><a href="/">Home Ministry AML/CFT List</a></li>
-              <li><a href="/">UN Security Council Consolidated List</a></li>
+              <li><a href="/">FAQ</a></li>
+              <li><a href="/">PMS</a></li>
+ 
             </ul>
           </div>
           <div>
             <h3 className="font-bold mb-2 text-lg">Contact</h3>
             <ul className="text-lg space-y-4">
-              <li><a href="/">New Baneshwor, Kathmandu, Nepal</a></li>
-              <li><a href="/">01-5970064 01-4528688</a></li>
-              <li><a href="/">info@lscapital.com.np</a></li>
+              <li><a href="/">5th Floor Simkhadaplaza,Putalisadak</a></li>
+              <li><a href="/">01-4536129</a></li>
+              <li><a href="/">info@sunlifecapital.com.np</a></li>
             </ul>
             <div className="flex gap-2 mt-3">
-              <span className="w-6 h-6 bg-white rounded-full flex items-center justify-center text-orange-600">f</span>
-              <span className="w-6 h-6 bg-white rounded-full flex items-center justify-center text-orange-600">i</span>
-              <span className="w-6 h-6 bg-white rounded-full flex items-center justify-center text-orange-600">y</span>
+              <span className="w-6 h-6 bg-white rounded-full flex items-center justify-center text-orange-600"><FacebookIcon/></span>
+              <span className="w-6 h-6 bg-white rounded-full flex items-center justify-center text-orange-600"><InstagramIcon/></span>
+              <span className="w-6 h-6 bg-white rounded-full flex items-center justify-center text-orange-600"><XIcon/></span>
             </div>
           </div>
-          <div>
-            <h3 className="font-bold mb-2 text-lg">Information Officer</h3>
-            <ul className="text-lg space-y-4">
-              <li><a href="/">Archana Shrestha Pradhan</a></li>
-              <li><a href="/">01-5970064</a></li>
-              <li><a href="/">archana.shrestha@lscapital.com.np</a></li>
-            </ul>
-          </div>
+     
         </div>
 
         {/* Copyright */}

@@ -54,7 +54,7 @@ const Issue_management = () => {
       <CompanyTable />
 
       {/* More Info Form */}
-      <div className="relative mt-30 lg:mt-60 md:mt-36 ">
+      <div className="relative mt-30 lg:mt-0 md:mt-36 ">
         <MoreInfoForm />
       </div>
     </div>

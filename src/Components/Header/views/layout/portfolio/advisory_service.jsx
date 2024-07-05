@@ -1,8 +1,23 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import advisoryImage from '../../../../../assets/Advisory.png';
 import NoticeItem from "./noticecard.jsx"
+import { useSelector } from 'react-redux';
+import { selectLanguage } from '../Redux/languageSlice.jsx';
+import { useTranslation } from 'react-i18next';
+
+
+
 
 const AdvisoryService = () => {
+  const { t, i18n } = useTranslation();
+  const lang = useSelector(selectLanguage);
+
+  useEffect(() => {
+    if (i18n.isInitialized) {
+      i18n.changeLanguage(lang);
+    }
+  }, [lang, i18n]);
+
   return (
     <div className=''>
     <div className="bg-white min-h-screen flex items-center justify-center">
@@ -11,7 +26,7 @@ const AdvisoryService = () => {
         <div className="md:w-1/2">
           <div className="bg-white p-8 md:p-32 ">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-              Advisory Service
+              {t("Advisory")}
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
               Advisory Service refers to professional advice provided to clients

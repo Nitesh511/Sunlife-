@@ -46,7 +46,7 @@ const PMSForm = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-blue-600 to-red-500 p-8 max-w-2xl mx-auto  mt-0 mb-14">
+    <div className="bg-gradient-to-b from-blue-600 to-red-500 p-8 max-w-2xl mx-auto  mt-0 py-24 mb-14">
       <h2 className="text-white text-2xl mb-0 mt-28">PMS Form Online Form</h2>
       <Formik
         initialValues={initialValues}

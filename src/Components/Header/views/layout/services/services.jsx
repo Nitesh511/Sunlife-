@@ -1,29 +1,40 @@
-import React from "react";
+import React,{useEffect} from "react";
 import Slider from "react-slick";
 import ServiceCard from "./serviceCard";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../layout.css"
+import "../layout.css";
+import { useSelector } from "react-redux"; 
+import { useTranslation } from "react-i18next";
+import { selectLanguage } from "../Redux/languageSlice";
 
 const OurServices = () => {
+  const { t, i18n } = useTranslation();
+  const lang = useSelector(selectLanguage);
+
+  useEffect(() => {
+    if (i18n.isInitialized) {
+      i18n.changeLanguage(lang);
+    }
+  }, [lang, i18n]);
   const services = [
     {
       icon: "📄",
-      title: "Merchant Banking",
+      title: t("Merchant Banking"),
       description:
-        "LS Capital as a Merchant Banker helps in channeling the financial surplus of the general public into productive investment avenues...",
+        t("Sunlife Capital as a Merchant Banker helps in channeling the financial surplus of the general public into productive investment avenues..."),
     },
     {
       icon: "📊",
-      title: "Registrar to Shares",
+      title: t("Registrar to Shares"),
       description:
-        "LS Capital specializes in both pre-issue and post-issue management of shares. In addition to these services, the company serves as th...",
+        t("Sulife Capital "),
     },
     {
       icon: "💳",
-      title: "Mutual Fund",
+      title: t("Mutual Fund"),
       description:
-        "A mutual fund is created out of amounts deposited by participants in a collective investment scheme by a contract as has bee...",
+        t("Amutual"),
     },
     {
       icon: "💳",
@@ -35,7 +46,7 @@ const OurServices = () => {
       icon: "💳",
       title: "Depository Participants",
       description:
-        "As a Depository Participant (DP), LS Capital Limited acts as an intermediary between the depository system (CDS and clearing Ltd.) an...",
+        "As a Depository Participant (DP), Sunlife Capital Limited acts as an intermediary between the depository system (CDS and clearing Ltd.) an...",
     },
     {
       icon: "💳",
@@ -47,7 +58,7 @@ const OurServices = () => {
       icon: "💳",
       title: "Sunlife Specialized Investments ",
       description:
-        "LS Capital has received the license from SEBON to operate Private Equity and Venture Capital (PE/VC) funds as Fund Manager under Specialized Investment Fu.",
+        "Sunlife Capital has received the license from SEBON to operate Private Equity and Venture Capital (PE/VC) funds as Fund Manager under Specialized Investment Fu.",
     },
   ];
 
@@ -77,10 +88,10 @@ const OurServices = () => {
 
   return (
     <div className="container mx-auto px-4 py-16">
-      <h2 className="text-3xl font-bold text-center mb-2">Our Services</h2>
+      <h2 className="text-3xl font-bold text-center mb-2">{t("Our Services")}</h2>
       <div className="w-16 h-1 bg-yellow-500 mx-auto mb-8"></div>
       <p className="text-center text-gray-600 mb-12">
-        Presenting Banking Plan & Services That are Right For You
+        {t("Presenting Banking Plan & Services That are Right For You")}
       </p>
       <Slider {...settings}>
         {services.map((service, index) => (

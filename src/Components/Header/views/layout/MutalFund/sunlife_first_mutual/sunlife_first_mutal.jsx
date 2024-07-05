@@ -22,12 +22,15 @@ const Sunlife_first_mutal = () => {
         {/* Content */}
         <div className="relative h-full flex flex-col justify-between p-32 text-white">
           {/* Title */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
-          <h1 className="text-4xl font-bold">Sunlife First Mutual Fund</h1>
+          <div className="absolute inset-0 flex items-center justify-center py-20">
+          <div className="text-center text-white p-8 mt-24  ">
+            <h1 className="text-4xl font-bold">Sunlife Mutual Fund</h1>
+          </div>
+        </div>
         </div>
       </div>
       <ChartComponent/>
-      <div className="relative mt-0 lg:mt-60">
+      <div className="relative mt-0 lg:mt-0">
           <MoreInfoForm/>
           </div>
         

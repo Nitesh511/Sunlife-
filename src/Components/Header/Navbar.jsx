@@ -432,6 +432,7 @@ const Navbar = () => {
                     <Link
                       className="block px-4 py-2 text-black  hover:bg-orange-600 hover:text-white"
                       to={"/login"}
+                      onClick={() => setIsOpen(!isOpen)}
                     >
                       {t("PMS Login")}
                     </Link>

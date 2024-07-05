@@ -40,8 +40,8 @@ const validateForm = (values) => {
 };
 
 const ContactForm = () => (
-  <div className="bg-blue-100 min-h-screen flex items-center justify-center lg:-mt-60">
-    <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full lg:-mt-32">
+  <div className="bg-blue-100 min-h-screen flex items-center justify-center pt-20">
+    <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full mt-20">
       <h2 className="text-3xl font-bold text-center mb-2">Contact Us</h2>
       <p className="text-center text-gray-600 mb-6">We will get back to you asap!</p>
       <Formik
@@ -61,7 +61,7 @@ const ContactForm = () => (
                   placeholder="First Name"
                   className="border border-gray-300 p-2 pl-10 w-full rounded-md"
                 />
-                <ErrorMessage name="firstName" component="div" className="text-red-500 text-sm" />
+                <ErrorMessage name="firstName" component="div" className="text-red-500 text-sm absolute bottom-0 left-0 transform translate-y-full" />
               </div>
               <div className="relative">
                 <PersonIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
@@ -72,7 +72,7 @@ const ContactForm = () => (
                   placeholder="Last Name"
                   className="border border-gray-300 p-2 pl-10 w-full rounded-md"
                 />
-                <ErrorMessage name="lastName" component="div" className="text-red-500 text-sm" />
+                <ErrorMessage name="lastName" component="div" className="text-red-500 text-sm absolute bottom-0 left-0 transform translate-y-full" />
               </div>
             </div>
             <div className="relative">
@@ -84,7 +84,7 @@ const ContactForm = () => (
                 placeholder="Email"
                 className="border border-gray-300 p-2 pl-10 w-full rounded-md"
               />
-              <ErrorMessage name="email" component="div" className="text-red-500 text-sm" />
+              <ErrorMessage name="email" component="div" className="text-red-500 text-sm absolute bottom-0 left-0 transform translate-y-full" />
             </div>
             <div className="relative">
               <PhoneIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
@@ -95,7 +95,7 @@ const ContactForm = () => (
                 placeholder="Phone"
                 className="border border-gray-300 p-2 pl-10 w-full rounded-md"
               />
-              <ErrorMessage name="phone" component="div" className="text-red-500 text-sm" />
+              <ErrorMessage name="phone" component="div" className="text-red-500 text-sm absolute bottom-0 left-0 transform translate-y-full" />
             </div>
             <div className="text-center">
               <button
@@ -109,7 +109,7 @@ const ContactForm = () => (
           </Form>
         )}
       </Formik>
-      <p className="text-center text-gray-600 mt-4">You may also call us at 333-33-33</p>
+      <p className="text-center text-gray-600 mt-4">You may also call us at 4536129 (Extentsion: 607, 608)</p>
     </div>
   </div>
 );

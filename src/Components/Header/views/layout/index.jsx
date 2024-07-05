@@ -33,6 +33,7 @@ import RightsShareResult from "./rights_share/rights_share_result";
 import Rights_ShareResult from "./rights_share/rights_share_result";
 import PMSForm from "./pms_form/pms_fourm";
 import LoginForm from "./login/login_form";
+import ContactForm from "./issue_management/contact_merchant";
 import { Provider } from 'react-redux';
 import store from "./Redux/store";
 
@@ -66,12 +67,13 @@ function Index (){
     <Route path="/downloads/depository_participants" element={<Download_depository/>}></Route>
     <Route path="/downloads/reports" element={<Reports_downloads/>}></Route>
     <Route path="/downloads/news" element={<News_part/>}></Route>
-    <Route path="/downloads/notice_updates" element={<div className="mt-32"><NoticesAndUpdates/></div>}></Route>
+    <Route path="/downloads/notice_updates" element={<div className=""><NoticesAndUpdates/></div>}></Route>
     <Route path="/downloads/faq" element={<Faq_downloads/>}></Route>
     <Route path="/downloads/gallery" element={<Gallery/>}></Route>
     <Route path="/results/ipo_results" element={<Ipo_results/>}></Route>
     <Route path="/results/rights_share_results" element={<Rights_ShareResult/>}></Route>
     <Route path="/online_service/pms_form" element={<PMSForm/>}></Route>
+    <Route path="/contact_form" element={<ContactForm/>}></Route>
     <Route path="/login" element={<LoginForm/>}></Route>
 
     

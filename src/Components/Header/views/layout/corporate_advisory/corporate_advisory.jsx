@@ -92,7 +92,7 @@ const Corporate_advisory = () => {
       </div>
 
       {/* More Info Form */}
-      <div className="relative mt-8 md:mt-40">
+      <div className="relative mt-8 md:mt-0">
         <MoreInfoForm />
       </div>
     </div>

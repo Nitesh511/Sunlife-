@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import person1 from "../../.././../../assets/bijaya.png";
 import { Card, Typography } from "@material-tailwind/react";
 import CloseIcon from '@mui/icons-material/Close';
+import defaultimg from "../../../../../assets/default.jpg"
 
 const ProfileCard = ({ name, title, imageSrc, age, description }) => {
   const [showModal, setShowModal] = useState(false);
@@ -60,39 +61,39 @@ const Management_team = () => (
         <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
           <div className="flex justify-center">
             <ProfileCard 
-              name="Rajiv Swarupchand" 
+              name="Hari" 
               title="Chairman" 
-              imageSrc={person1} 
+              imageSrc={defaultimg} 
               age={50} 
-              description="Rajiv Swarupchand is the chairman of the company, with over 20 years of experience in the industry."
+              description="Hari is the chairman of the company, with over 20 years of experience in the industry."
             />
           </div>
           <div className="grid grid-cols-4 justify-items-center">
             <ProfileCard 
-              name="Mr. Dipesh Anupam" 
+              name="Mr. X" 
               title="Director" 
-              imageSrc={person1} 
+              imageSrc={defaultimg} 
               age={45} 
-              description="Dipesh Anupam is a director who has been a part of the board for 10 years."
+              description="X is a director who has been a part of the board for 10 years."
             />
             <ProfileCard 
-              name="Mr. Hari Acharya" 
+              name="MR. Acharya" 
               title="Director" 
-              imageSrc={person1} 
+              imageSrc={defaultimg} 
               age={48} 
-              description="Hari Acharya brings a wealth of knowledge and expertise to the board."
+              description="Acharya brings a wealth of knowledge and expertise to the board."
             />
             <ProfileCard 
-              name="Ms. Sandhya Atti" 
+              name="Ms. Sita" 
               title="Director" 
-              imageSrc={person1} 
+              imageSrc={defaultimg} 
               age={40} 
-              description="Sandhya Atti is known for her strategic vision and leadership."
+              description="Sita is known for her strategic vision and leadership."
             />
               <ProfileCard 
-              name="Dr. Ram Prakash Pokhrel" 
+              name="Dr. Ram" 
               title="Director" 
-              imageSrc={person1} 
+              imageSrc={defaultimg} 
               age={55} 
               description="Dr. Ram Prakash Pokhrel is a distinguished director with a background in finance."
             />  
@@ -103,46 +104,46 @@ const Management_team = () => (
       {/* Mobile view */}
       <div className="md:hidden grid grid-cols-1 gap-4">
         <ProfileCard 
-          name="Rajiv Swarupchand" 
+          name="Hari" 
           title="Chairman" 
-          imageSrc={person1} 
+          imageSrc={defaultimg} 
           age={50} 
-          description="Rajiv Swarupchand is the chairman of the company, with over 20 years of experience in the industry."
+          description="Hari is the chairman of the company, with over 20 years of experience in the industry."
         />
         <ProfileCard 
-          name="Mr. Dipesh Anupam" 
+          name="Mr. x" 
           title="Director" 
-          imageSrc={person1} 
+          imageSrc={defaultimg} 
           age={45} 
-          description="Dipesh Anupam is a director who has been a part of the board for 10 years."
+          description="x is a director who has been a part of the board for 10 years."
         />
         <ProfileCard 
-          name="Mr. Hari Acharya" 
+          name="Mr. Acharya" 
           title="Director" 
-          imageSrc={person1} 
+          imageSrc={defaultimg} 
           age={48} 
-          description="Hari Acharya brings a wealth of knowledge and expertise to the board."
+          description="Acharya brings a wealth of knowledge and expertise to the board."
         />
         <ProfileCard 
-          name="Ms. Sandhya Atti" 
+          name="Ms. Sita" 
           title="Director" 
-          imageSrc={person1} 
+          imageSrc={defaultimg} 
           age={40} 
-          description="Sandhya Atti is known for her strategic vision and leadership."
+          description="Sita is known for her strategic vision and leadership."
         />
         <ProfileCard 
-          name="Dr. Ram Prakash Pokhrel" 
+          name="Dr. Ram " 
           title="Director" 
-          imageSrc={person1} 
+          imageSrc={defaultimg} 
           age={55} 
-          description="Dr. Ram Prakash Pokhrel is a distinguished director with a background in finance."
+          description="Dr. Ram is a distinguished director with a background in finance."
         />
         <ProfileCard 
-          name="Mr. Sushil Kumar Arun" 
+          name="Mr. NK" 
           title="Director" 
-          imageSrc={person1} 
+          imageSrc={defaultimg} 
           age={52} 
-          description="Sushil Kumar Arun has been instrumental in driving the company's growth."
+          description="NK has been instrumental in driving the company's growth."
         />
       </div>
     </div>
